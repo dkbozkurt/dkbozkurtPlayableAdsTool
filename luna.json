@@ -18,7 +18,7 @@
             "externalSources": [],
             "externalJSLibraries": [],
             "scriptingDefines": [],
-            "msbuildVersion": "",
+            "msbuildVersion": "16.11",
             "monoVersion": "N/A",
             "dotnetVersion": "5.0.404"
         },
