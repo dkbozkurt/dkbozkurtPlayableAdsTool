@@ -41,14 +41,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         
         public void OpenStore()
         {
-            //Luna.Unity.Playable.InstallFullGame();
-            Debug.Log("Luna.Unity.Playable.InstallFullGame Called");
+            Luna.Unity.Playable.InstallFullGame();
         }
         
         public static void OpenStoreStatic()
         {
-            // Luna.Unity.Playable.InstallFullGame();
-            Debug.Log("Luna.Unity.Playable.InstallFullGame Called");
+            Luna.Unity.Playable.InstallFullGame();
         }
         
         private void DoAfterSeconds(float seconds, Action action)
