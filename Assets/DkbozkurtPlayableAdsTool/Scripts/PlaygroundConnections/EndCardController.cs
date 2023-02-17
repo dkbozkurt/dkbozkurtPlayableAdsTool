@@ -53,7 +53,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         private int _openEndCardAfterTaps = 20;
         
         [LunaPlaygroundField("End card animation call type", 3, "End card Settings")] [SerializeField]
-        private EndCarCallType _endCarCallType = EndCarCallType.AllFadeInStatic;
+        private EndCarCallType _endCarCallType = EndCarCallType.GatherInTheMiddleDynamicPlayButton;
         
         [LunaPlaygroundAsset("Icon Texture", 4, "End card Settings")]
         public Texture2D IconTexture2D;

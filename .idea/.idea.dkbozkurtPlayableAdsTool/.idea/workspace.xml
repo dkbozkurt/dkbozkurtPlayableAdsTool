@@ -4,7 +4,7 @@
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Helpers/SingletonBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672081325713</updated>
       <workItem from="1672081329766" duration="504000" />
-      <workItem from="1676640510428" duration="5694000" />
+      <workItem from="1676640510428" duration="6344000" />
     </task>
     <servers />
   </component>

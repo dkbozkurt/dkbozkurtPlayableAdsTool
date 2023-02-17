@@ -28,6 +28,8 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         private bool _bannerWithIcon = true;
         private bool _bannerWithText = true;
         private bool _bannerWithGetButton = true;
+
+        private static GameObject _tutorialConnectionsObj;
         
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
@@ -43,30 +45,39 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         private void UIButtons()
         {
             GUILayout.Label("CTA Controller",EditorStyles.boldLabel);
-            if (GUILayout.Button("Import CtaController"))
+            if (GUILayout.Button("Import CtaController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallCtaController();
             }
 
-            GUILayout.Space(5);
+            GUILayout.Space(20);
             
             GUILayout.Label("EndCard Controller",EditorStyles.boldLabel);
-            if (GUILayout.Button("Import EndCardController"))
+            if (GUILayout.Button("Import EndCardController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallEndCardController();
             }
             
-            GUILayout.Space(5);
+            GUILayout.Space(20);
             
             GUILayout.Label("Banner Controller",EditorStyles.boldLabel);
             _bannerWithIcon = EditorGUILayout.Toggle("Banner With Icon", _bannerWithIcon);
             _bannerWithText = EditorGUILayout.Toggle("Banner With Text", _bannerWithText);
             _bannerWithGetButton = EditorGUILayout.Toggle("Banner With Get Button", _bannerWithGetButton);
-            if (GUILayout.Button("Import BannerController"))
+            if (GUILayout.Button("Import BannerController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallBannerController();
             }
             
+            GUILayout.Space(20);
+            
+            GUILayout.Label("Tutorial Controller",EditorStyles.boldLabel);
+            if (GUILayout.Button("Import TutorialController",GUILayout.Width(200),GUILayout.Height(25)))
+            {
+                Debug.Log("Create tutorial controller connections");
+            }
+            
+            GUILayout.Space(20);
         }
 
         private void CallCtaController()
