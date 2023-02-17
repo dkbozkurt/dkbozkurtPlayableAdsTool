@@ -20,9 +20,11 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         private static GameObject _playableGameManager;
         private static GameObject _endCardConnectionsObj;
         private static GameObject _endCardParentCanvas;
+        private static GameObject _bannerConnectionsObj;
 
         private Button _endCardButton;
-
+        private Button _bannerButton;
+        
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
         {
@@ -39,7 +41,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.Label("CTA Controller",EditorStyles.boldLabel);
             if (GUILayout.Button("Import CtaController"))
             {
-                
                 CallCtaController();
             }
 
@@ -50,6 +51,15 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             {
                 CallEndCardController();
             }
+            
+            GUILayout.Space(5);
+            
+            GUILayout.Label("Banner Controller",EditorStyles.boldLabel);
+            if (GUILayout.Button("Import BannerController"))
+            {
+                CallBannerController();
+            }
+            
         }
 
         private void CallCtaController()
@@ -154,6 +164,81 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             LocateRectTransform(endCardPlayButton.GetComponent<RectTransform>(),new Vector2(0f,-800f),new Vector2(756f,300f));
 
             #endregion
+        }
+
+        private void CallBannerController()
+        {
+            if (GameObject.Find("BannerController")) return;
+            
+            if (GameObject.Find("Canvas") == null)
+            {
+                GenerateCanvasPack();
+            }
+            else
+            {
+                _endCardParentCanvas = GameObject.Find("Canvas");
+            }
+
+            #region BannerController
+            
+            _bannerConnectionsObj = GenerateUIObject("BannerController",_endCardParentCanvas.transform);
+            var bannerController = _bannerConnectionsObj.AddComponent<BannerController>();
+            var bannerConnectionsRectTransform = _bannerConnectionsObj.GetComponent<RectTransform>();
+            bannerConnectionsRectTransform.anchorMin = new Vector2(0.5f,0);
+            bannerConnectionsRectTransform.anchorMax = new Vector2(0.5f,0);
+            bannerConnectionsRectTransform.pivot = new Vector2(0.5f,0);
+            bannerConnectionsRectTransform.offsetMax = new Vector2(1364.03f, 138.0483f);
+            bannerConnectionsRectTransform.offsetMin = new Vector2(0, 0);
+            bannerConnectionsRectTransform.anchoredPosition = Vector2.zero;
+
+            #endregion
+
+            #region Banner Background
+            
+            GameObject bannerBackground = GenerateUIObject("BannerBackground",_bannerConnectionsObj.transform);
+            AddImageComponent(bannerBackground);
+            var bannerBackgroundRectTransform = bannerBackground.GetComponent<RectTransform>();
+            bannerBackgroundRectTransform.anchorMin = Vector2.zero;
+            bannerBackgroundRectTransform.anchorMax = Vector2.one;
+            bannerBackgroundRectTransform.pivot = new Vector2(0.5f,0.5f);
+            bannerBackgroundRectTransform.offsetMax = new Vector2(0, 0);
+            bannerBackgroundRectTransform.offsetMin = new Vector2(0, 0);
+
+            var bannerBackgroundImage = bannerBackground.GetComponent<Image>();
+            bannerBackgroundImage.raycastTarget = true;
+            bannerBackgroundImage.color = new Color(0f, 0f, 0f, 0.75f);
+
+            bannerBackground.AddComponent<Button>();
+            _bannerButton = bannerBackground.GetComponent<Button>();
+            _bannerButton.transition = Selectable.Transition.None;
+            
+            AddStoreConnectionOntoButton(_bannerButton);
+
+            bannerController.BannerBackgroundImage = bannerBackgroundImage;
+            bannerBackground.SetActive(bannerController.IsActive);
+            
+            #endregion
+            
+            #region Banner Splash Image
+            
+            GameObject bannerSplash = GenerateUIObject("BannerSplash", bannerBackground.transform);
+            AddImageComponent(bannerSplash);
+            bannerController.BannerSplashImage = bannerSplash.GetComponent<Image>();
+            LocateRectTransform(bannerSplash.GetComponent<RectTransform>(), new Vector2(0f,0f),new Vector2(1125f,138));
+
+            #endregion
+
+            #region Banner Icon Image
+
+            GameObject bannerIcon = GenerateUIObject("EndCardIcon", bannerBackground.transform);
+            AddImageComponent(bannerIcon);
+            bannerController.BannerIconImage = bannerIcon.GetComponent<Image>();
+            bannerIcon.GetComponent<Image>().color = Color.black;
+            LocateRectTransform(bannerIcon.GetComponent<RectTransform>(), new Vector2(-364.75f,0f),new Vector2(120f,120f));
+
+            #endregion
+            
+            // TODO banner text and visual button
         }
 
         private void GenerateCanvasPack()
