@@ -18,12 +18,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
     public class DkbPlayableAdsTool : EditorWindow
     {
         private static GameObject _playableGameManager;
+        private static GameObject _playableParentCanvas;
+        
         private static GameObject _endCardConnectionsObj;
-        private static GameObject _endCardParentCanvas;
-        private static GameObject _bannerConnectionsObj;
-
         private Button _endCardButton;
+
+        private static GameObject _bannerConnectionsObj;
         private Button _bannerButton;
+        private bool _bannerWithIcon = true;
+        private bool _bannerWithText = true;
+        private bool _bannerWithGetButton = true;
         
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
@@ -55,6 +59,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.Space(5);
             
             GUILayout.Label("Banner Controller",EditorStyles.boldLabel);
+            _bannerWithIcon = EditorGUILayout.Toggle("Banner With Icon", _bannerWithIcon);
+            _bannerWithText = EditorGUILayout.Toggle("Banner With Text", _bannerWithText);
+            _bannerWithGetButton = EditorGUILayout.Toggle("Banner With Get Button", _bannerWithGetButton);
             if (GUILayout.Button("Import BannerController"))
             {
                 CallBannerController();
@@ -96,12 +103,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             }
             else
             {
-                _endCardParentCanvas = GameObject.Find("Canvas");
+                _playableParentCanvas = GameObject.Find("Canvas");
             }
 
             #region EndCardController
 
-            _endCardConnectionsObj = GenerateUIObject("EndCardController",_endCardParentCanvas.transform);
+            _endCardConnectionsObj = GenerateUIObject("EndCardController",_playableParentCanvas.transform);
             var endCardController = _endCardConnectionsObj.AddComponent<EndCardController>();
             var endCardConnectionsRectTransform = _endCardConnectionsObj.GetComponent<RectTransform>();
             endCardConnectionsRectTransform.anchorMin = Vector2.zero;
@@ -164,6 +171,10 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             LocateRectTransform(endCardPlayButton.GetComponent<RectTransform>(),new Vector2(0f,-800f),new Vector2(756f,300f));
 
             #endregion
+            
+            SetComponentAsLastChild(endCardConnectionsRectTransform);
+            
+            Debug.Log("End Card Controller successfully instantiated!");
         }
 
         private void CallBannerController()
@@ -176,12 +187,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             }
             else
             {
-                _endCardParentCanvas = GameObject.Find("Canvas");
+                _playableParentCanvas = GameObject.Find("Canvas");
             }
 
             #region BannerController
             
-            _bannerConnectionsObj = GenerateUIObject("BannerController",_endCardParentCanvas.transform);
+            _bannerConnectionsObj = GenerateUIObject("BannerController",_playableParentCanvas.transform);
             var bannerController = _bannerConnectionsObj.AddComponent<BannerController>();
             var bannerConnectionsRectTransform = _bannerConnectionsObj.GetComponent<RectTransform>();
             bannerConnectionsRectTransform.anchorMin = new Vector2(0.5f,0);
@@ -230,26 +241,56 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             #region Banner Icon Image
 
-            GameObject bannerIcon = GenerateUIObject("EndCardIcon", bannerBackground.transform);
-            AddImageComponent(bannerIcon);
-            bannerController.BannerIconImage = bannerIcon.GetComponent<Image>();
-            bannerIcon.GetComponent<Image>().color = Color.black;
-            LocateRectTransform(bannerIcon.GetComponent<RectTransform>(), new Vector2(-364.75f,0f),new Vector2(120f,120f));
-
+            if (_bannerWithIcon)
+            {
+                GameObject bannerIcon = GenerateUIObject("EndCardIcon", bannerBackground.transform);
+                AddImageComponent(bannerIcon);
+                bannerController.BannerIconImage = bannerIcon.GetComponent<Image>();
+                bannerIcon.GetComponent<Image>().color = Color.black;
+                LocateRectTransform(bannerIcon.GetComponent<RectTransform>(), new Vector2(-364.75f,0f),new Vector2(120f,120f));    
+            }
+            
             #endregion
             
-            // TODO banner text and visual button
+            #region Banner Text Image
+
+            if (_bannerWithText)
+            {
+                GameObject bannerText = GenerateUIObject("BannerText", bannerBackground.transform);
+                AddImageComponent(bannerText);
+                bannerController.BannerIconImage = bannerText.GetComponent<Image>();
+                bannerText.GetComponent<Image>().color = Color.black;
+                LocateRectTransform(bannerText.GetComponent<RectTransform>(), new Vector2(9.375f,0f),new Vector2(547.75f,120f));    
+            }
+            
+            #endregion
+            
+            #region Banner Get Button Image
+
+            if (_bannerWithGetButton)
+            {
+                GameObject bannerGetButton = GenerateUIObject("BannerGetButton", bannerBackground.transform);
+                AddImageComponent(bannerGetButton);
+                bannerController.BannerIconImage = bannerGetButton.GetComponent<Image>();
+                bannerGetButton.GetComponent<Image>().color = Color.black;
+                LocateRectTransform(bannerGetButton.GetComponent<RectTransform>(), new Vector2(429.25f,0f),new Vector2(200f,120f));    
+            }
+            
+            #endregion
+            
+            SetComponentAsFirstChild(bannerConnectionsRectTransform);
+            Debug.Log("Banner Controller successfully instantiated!");
         }
 
         private void GenerateCanvasPack()
         {
-            _endCardParentCanvas = new GameObject("Canvas");
-            _endCardParentCanvas.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
-            var canvasScaler = _endCardParentCanvas.AddComponent<CanvasScaler>();
+            _playableParentCanvas = new GameObject("Canvas");
+            _playableParentCanvas.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+            var canvasScaler = _playableParentCanvas.AddComponent<CanvasScaler>();
             canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             canvasScaler.referenceResolution = new Vector2(1125, 2436);
             canvasScaler.matchWidthOrHeight =1f;
-            _endCardParentCanvas.AddComponent<GraphicRaycaster>();
+            _playableParentCanvas.AddComponent<GraphicRaycaster>();
 
             if(GameObject.Find("Event System")) return;
             
@@ -288,6 +329,20 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             // In run time, unity event listeners can be added by following lines. 
             // button.onClick.AddListener(()=>CtaController.Instance.OpenStore());
             // button.onClick.AddListener(delegate { CtaController.Instance.OpenStore(); });
+        }
+
+        private void SetComponentAsLastChild(RectTransform focusObj)
+        {
+            if(_playableParentCanvas == null) return;
+
+            focusObj.SetAsLastSibling();
+        }
+
+        private void SetComponentAsFirstChild(RectTransform focusObj)
+        {
+            if(_playableParentCanvas == null) return;
+            
+            focusObj.SetAsFirstSibling();
         }
     }
 }

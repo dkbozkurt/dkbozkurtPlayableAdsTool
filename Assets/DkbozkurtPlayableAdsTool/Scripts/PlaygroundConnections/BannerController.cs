@@ -11,7 +11,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         public Image BannerSplashImage;
         public Image BannerIconImage;
         public Image BannerTextImage;
-        public Image BannerVisualButtonImage;
+        public Image BannerGetButtonImage;
 
         public bool IsActive = true;
 

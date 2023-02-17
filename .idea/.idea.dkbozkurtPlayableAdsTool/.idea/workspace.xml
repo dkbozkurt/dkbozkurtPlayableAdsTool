@@ -4,15 +4,7 @@
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.XML" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.XML.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SVC_Luna.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVC_Luna.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luna.json" beforeDir="false" afterPath="$PROJECT_DIR$/luna.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672081325713</updated>
       <workItem from="1672081329766" duration="504000" />
-      <workItem from="1676640510428" duration="3704000" />
+      <workItem from="1676640510428" duration="5694000" />
     </task>
     <servers />
   </component>
