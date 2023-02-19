@@ -1,11 +1,11 @@
 {
-    "version": "4.4.0",
+    "version": "4.5.0",
     "projectId": "31f859b9-ff02-4898-af5d-28b2ddd2e8c5",
     "applicationID": 0,
     "creativeName": "",
     "pgServer": "EU",
     "window": {
-        "​ ": true
+        "​ ": true
     },
     "unity": {
         "scripts": {
@@ -14,13 +14,13 @@
                 "**/Luna/RuntimeScripts/"
             ],
             "msbuildMac64": "/Library/Frameworks/Mono.framework/Versions/Current/bin/msbuild",
-            "msbuildWin64": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\MSBuild.exe",
+            "msbuildWin64": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
             "externalSources": [],
             "externalJSLibraries": [],
             "scriptingDefines": [],
-            "msbuildVersion": "17.0",
+            "msbuildVersion": "16.11",
             "monoVersion": "N/A",
-            "dotnetVersion": "6.0.114"
+            "dotnetVersion": "5.0.404"
         },
         "assets": {
             "export": [],
@@ -88,7 +88,8 @@
             "enabled": false
         },
         "playerPrefs": true,
-        "enableDynamicBatching": false
+        "enableDynamicBatching": false,
+        "forceSourcesBasedCompilation": false
     },
     "assets": {
         "rules": {

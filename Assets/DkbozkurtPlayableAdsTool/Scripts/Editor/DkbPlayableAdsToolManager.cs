@@ -15,7 +15,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
     /// <summary>
     /// TOOLS OPTION'S FUNCTIONS HAS TO BE 'STATIC' !!!
     /// </summary>
-    public class DkbPlayableAdsTool : EditorWindow
+    public class DkbPlayableAdsToolManager : EditorWindow
     {
         private static GameObject _playableGameManager;
         private static GameObject _playableParentCanvas;
@@ -34,7 +34,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
         {
-            GetWindow<DkbPlayableAdsTool>("Dkbozkurt Playable Ads Tool");
+            GetWindow<DkbPlayableAdsToolManager>("Dkbozkurt Playable Ads Tool");
         }
 
         private void OnGUI()
