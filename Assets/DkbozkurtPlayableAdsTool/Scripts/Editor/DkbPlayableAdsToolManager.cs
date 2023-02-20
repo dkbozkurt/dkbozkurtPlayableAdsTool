@@ -342,34 +342,92 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             #region Tutorial Text Parent
 
-            var tutorialTextParent = GenerateUIObject("TutorialTextParent", _tutorialConnectionsObj.transform);
-            tutorialController.TutorialTextParent = tutorialTextParent;
-            var tutorialTextParentRectTransform = tutorialTextParent.GetComponent<RectTransform>();
-            tutorialTextParentRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            tutorialTextParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            tutorialTextParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            LocateRectTransform(tutorialTextParentRectTransform, new Vector2(0f,600f),new Vector2(1125f,390f));
+            if (_tutorialWithText)
+            {
+                var tutorialTextParent = GenerateUIObject("TutorialTextParent", _tutorialConnectionsObj.transform);
+                tutorialController.TutorialTextParent = tutorialTextParent;
+                var tutorialTextParentRectTransform = tutorialTextParent.GetComponent<RectTransform>();
+                tutorialTextParentRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                tutorialTextParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                tutorialTextParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                LocateRectTransform(tutorialTextParentRectTransform, new Vector2(0f,600f),new Vector2(1125f,390f));
+                
+                #region Tutorial Text
 
+                var tutorialText = GenerateUIObject("TutorialText", tutorialTextParent.transform).AddComponent<TextMeshProUGUI>();
+                tutorialController.TutorialText = tutorialText;
+                var tutorialTextRectTransform = tutorialText.GetComponent<RectTransform>();
+                tutorialTextRectTransform.anchorMin = Vector2.zero;
+                tutorialTextRectTransform.anchorMax = Vector2.one;
+                tutorialTextRectTransform.pivot = new Vector2(0.5f,0.5f);
+                tutorialTextRectTransform.offsetMax = new Vector2(0, 0);
+                tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
+            
+                tutorialText.text = "New Text New Text New Text New Text New Text"; 
+                TMP_FontAsset fontAsset=  Instantiate(Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset);
+                tutorialText.font = fontAsset;
+                tutorialText.fontSize = 110;
+                tutorialText.characterSpacing = 0.5f;
+                tutorialText.lineSpacing = -65f;
+                tutorialText.alignment = TextAlignmentOptions.Center;
+                tutorialText.raycastTarget = false;
+
+                #endregion
+            }
             #endregion
 
-            #region Tutorial Text
+            #region Tutorial Hand Parent
 
-            var tutorialText = GenerateUIObject("TutorialText", tutorialTextParent.transform).AddComponent<TextMeshProUGUI>();
-            tutorialController.TutorialText = tutorialText;
-            var tutorialTextRectTransform = tutorialText.GetComponent<RectTransform>();
-            tutorialTextRectTransform.anchorMin = Vector2.zero;
-            tutorialTextRectTransform.anchorMax = Vector2.one;
-            tutorialTextRectTransform.pivot = new Vector2(0.5f,0.5f);
-            tutorialTextRectTransform.offsetMax = new Vector2(0, 0);
-            tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
+            if (_tutorialWithTutorialHand)
+            {
+                var tutorialHandParent = GenerateUIObject("TutorialHandParent", _tutorialConnectionsObj.transform);
+                tutorialController.TutorialHandAnimator = tutorialHandParent.AddComponent<Animator>();
+                tutorialController.TutorialHandParent = tutorialHandParent;
+                var tutorialHandParentRectTransform = tutorialHandParent.GetComponent<RectTransform>();
+                tutorialHandParentRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                tutorialHandParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                tutorialHandParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                LocateRectTransform(tutorialHandParentRectTransform, new Vector2(0f,-600f),new Vector2(380f,380f));
+                
+                #region Tutorial Hand Image
+
+                var tutorialHand = GenerateUIObject("TutorialHand", tutorialHandParentRectTransform.transform);
+                var tutorialHandRectTransform = tutorialHand.GetComponent<RectTransform>();
+                tutorialHandRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                tutorialHandRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                tutorialHandRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                LocateRectTransform(tutorialHandRectTransform, new Vector2(190f,-180f),new Vector2(380f,380f));
+                
+                var tutorialHandImage = tutorialHand.AddComponent<Image>();
+                tutorialHandImage.raycastTarget = false;
+                
+                // TODO burayi dikkatli bak
+                // SetComponentAsLastChild(tutorialHandRectTransform);
+
+                #endregion
+                
+                #region Endless Loop Image
+
+                if (_tutorialHandWithEndlessLoop)
+                {
+                    
+                }
+                #endregion
+
+                #region Tutorial Hand Glow Image
+
+                if (_tutorialHandWithPointGlow)
+                {
+                    
+                }
+                #endregion
+            }
             
-            tutorialText.text = "New Text New Text New Text New Text New Text";
-            // TODO Font Asset need to change to baloo
-            tutorialText.fontSize = 110;
-            tutorialText.characterSpacing = 0.5f;
-            tutorialText.lineSpacing = -65f;
-            tutorialText.alignment = TextAlignmentOptions.Center;
-            tutorialText.raycastTarget = false;
+            #endregion
+
+            #region Tutorial World Space Arrow
+
+            
 
             #endregion
             
