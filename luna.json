@@ -28,7 +28,8 @@
                 "**/Editor/"
             ],
             "includes": [
-                "Assets/Resources/DOTweenSettings.asset"
+                "Assets/Resources/DOTweenSettings.asset",
+                "Assets/TextMesh Pro/Resources/TMP Settings.asset"
             ]
         },
         "scenes": [],
