@@ -32,8 +32,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         private static GameObject _tutorialConnectionsObj;
         private bool _tutorialWithText = true;
         private bool _tutorialWithTutorialHand = true;
-        private bool _tutorialHandWithEndlessLoop = false;
-        private bool _tutorialHandWithPointGlow = false;
+        private bool _tutorialHandWithEndlessLoop = true;
+        private bool _tutorialHandWithPointGlow = true;
+        private bool _tutorialWithWordSpaceArrow = false;
         
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
@@ -65,9 +66,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.Space(20);
             
             GUILayout.Label("Banner Controller",EditorStyles.boldLabel);
-            _bannerWithIcon = EditorGUILayout.Toggle("Banner With Icon", _bannerWithIcon);
-            _bannerWithText = EditorGUILayout.Toggle("Banner With Text", _bannerWithText);
-            _bannerWithGetButton = EditorGUILayout.Toggle("Banner With Get Button", _bannerWithGetButton);
+            _bannerWithIcon = EditorGUILayout.Toggle("With Icon", _bannerWithIcon);
+            _bannerWithText = EditorGUILayout.Toggle("With Text", _bannerWithText);
+            _bannerWithGetButton = EditorGUILayout.Toggle("With Get Button", _bannerWithGetButton);
             if (GUILayout.Button("Import BannerController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallBannerController();
@@ -76,18 +77,20 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.Space(20);
             
             GUILayout.Label("Tutorial Controller",EditorStyles.boldLabel);
-            _tutorialWithText = EditorGUILayout.Toggle("Tutorial With Text", _tutorialWithText);
-            _tutorialWithTutorialHand = EditorGUILayout.Toggle("Tutorial With Tutorial Hand", _tutorialWithTutorialHand);
-            
+            _tutorialWithText = EditorGUILayout.Toggle("With Text", _tutorialWithText);
+            _tutorialWithTutorialHand = EditorGUILayout.Toggle("With Tutorial Hand", _tutorialWithTutorialHand);
             if (_tutorialWithTutorialHand)
             {
                 GUILayout.BeginHorizontal();
-                _tutorialHandWithEndlessLoop = EditorGUILayout.Toggle("Tutorial Hand With Endless Loop Image",
+                _tutorialHandWithEndlessLoop = EditorGUILayout.Toggle("Hand With Endless Loop Image",
                     _tutorialHandWithEndlessLoop);
                 _tutorialHandWithPointGlow =
-                    EditorGUILayout.Toggle("Tutorial Hand With Point Glow Image", _tutorialHandWithPointGlow);
+                    EditorGUILayout.Toggle("Hand With Point Glow Image", _tutorialHandWithPointGlow);
                 GUILayout.EndHorizontal();
-            }    
+            }
+
+            _tutorialWithWordSpaceArrow =
+                EditorGUILayout.Toggle("With World Space Arrow", _tutorialWithWordSpaceArrow);
             
             if (GUILayout.Button("Import TutorialController",GUILayout.Width(200),GUILayout.Height(25)))
             {
@@ -271,7 +274,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             if (_bannerWithIcon)
             {
-                GameObject bannerIcon = GenerateUIObject("EndCardIcon", bannerBackground.transform);
+                GameObject bannerIcon = GenerateUIObject("BannerIcon", bannerBackground.transform);
                 AddImageComponent(bannerIcon);
                 bannerController.BannerIconImage = bannerIcon.GetComponent<Image>();
                 bannerIcon.GetComponent<Image>().color = Color.black;
@@ -286,7 +289,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             {
                 GameObject bannerText = GenerateUIObject("BannerText", bannerBackground.transform);
                 AddImageComponent(bannerText);
-                bannerController.BannerIconImage = bannerText.GetComponent<Image>();
+                bannerController.BannerTextImage = bannerText.GetComponent<Image>();
                 bannerText.GetComponent<Image>().color = Color.black;
                 LocateRectTransform(bannerText.GetComponent<RectTransform>(), new Vector2(9.375f,0f),new Vector2(547.75f,120f));    
             }
@@ -299,7 +302,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             {
                 GameObject bannerGetButton = GenerateUIObject("BannerGetButton", bannerBackground.transform);
                 AddImageComponent(bannerGetButton);
-                bannerController.BannerIconImage = bannerGetButton.GetComponent<Image>();
+                bannerController.BannerGetButtonImage = bannerGetButton.GetComponent<Image>();
                 bannerGetButton.GetComponent<Image>().color = Color.black;
                 LocateRectTransform(bannerGetButton.GetComponent<RectTransform>(), new Vector2(429.25f,0f),new Vector2(200f,120f));    
             }
@@ -333,6 +336,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             tutorialConnectionsRectTransform.pivot = new Vector2(0.5f,0.5f);
             tutorialConnectionsRectTransform.offsetMax = new Vector2(0, 0);
             tutorialConnectionsRectTransform.offsetMin = new Vector2(0, 0);
+
+            #endregion
+
+            #region Tutorial Text
+
+            
 
             #endregion
             
