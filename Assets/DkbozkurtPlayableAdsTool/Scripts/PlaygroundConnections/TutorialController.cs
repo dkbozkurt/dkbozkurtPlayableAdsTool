@@ -19,16 +19,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         [SerializeField] private bool _autoDeactivateTutorial = false;
         [SerializeField] private float _durationToDeactivateTutorial = 2f;
 
-        [Header("Tutorial Hand Properties")]
-        [SerializeField] private GameObject _tutorialHandParent;
-        private Animator _tutorialHandAnimator;
-        
         [Header("Tutorial Text Properties")]
-        [SerializeField] private GameObject _tutorialTextParent;
-        [SerializeField] private TextMeshProUGUI _tutorialText;
+        public GameObject TutorialTextParent;
+        public TextMeshProUGUI TutorialText;
         
+        [Header("Tutorial Hand Properties")]
+        public GameObject TutorialHandParent;
+        public Animator TutorialHandAnimator;
+
         [Header("Tutorial Arrow Properties")]
-        [SerializeField] private Transform _tutorialArrowParent;
+        public Transform TutorialArrowParent;
         [SerializeField] private Vector3[] _tutorialArrowWorldSpacePositions;
 
         private Coroutine _tutorialTextCoroutine;
@@ -47,15 +47,15 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         
         public void TutorialTextSetter(bool status,int index = 0)
         {
-            if(IsObjectNull(_tutorialTextParent)) return;
+            if(IsObjectNull(TutorialTextParent)) return;
             
-            _tutorialTextParent.SetActive(status);
+            TutorialTextParent.SetActive(status);
             
             if(_tutorialTextCoroutine != null) StopCoroutine(_tutorialHandCoroutine);
             
             if(!status) return;
             
-            _tutorialText.text = _tutorialTexts[index];
+            TutorialText.text = _tutorialTexts[index];
             
             if(!_autoDeactivateTutorial) return;
             _tutorialTextCoroutine =
@@ -65,7 +65,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
 
         public void TutorialHandSetterWithAnimation(bool status,string animName="",string animToSetFalse = "")
         {
-            if(IsObjectNull(_tutorialHandParent)) return;
+            if(IsObjectNull(TutorialHandParent)) return;
             
             if ( status && animName == "")
             {
@@ -73,14 +73,14 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
                 return;
             }
             
-            _tutorialHandParent.SetActive(status);
+            TutorialHandParent.SetActive(status);
 
             if(_tutorialHandCoroutine != null) StopCoroutine(_tutorialHandCoroutine);
 
             if (!status) return; 
             
-            _tutorialHandAnimator.SetBool(animName,true);
-            if(animToSetFalse != "") _tutorialHandAnimator.SetBool(animToSetFalse,false);
+            TutorialHandAnimator.SetBool(animName,true);
+            if(animToSetFalse != "") TutorialHandAnimator.SetBool(animToSetFalse,false);
             
             if(!_autoDeactivateTutorial) return;
             _tutorialHandCoroutine = 
@@ -90,15 +90,15 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         
         public void TutorialArrowSetter(bool status,int index = 0)
         {
-            if(IsObjectNull(_tutorialArrowParent.gameObject)) return;
+            if(IsObjectNull(TutorialArrowParent.gameObject)) return;
             
-            _tutorialArrowParent.gameObject.SetActive(status);
+            TutorialArrowParent.gameObject.SetActive(status);
             
             if(_tutorialArrowCoroutine != null) StopCoroutine(_tutorialArrowCoroutine);
             
             if (!status) return;
 
-            _tutorialArrowParent.transform.position = _tutorialArrowWorldSpacePositions[index];
+            TutorialArrowParent.transform.position = _tutorialArrowWorldSpacePositions[index];
             
             if(!_autoDeactivateTutorial) return;
             _tutorialArrowCoroutine = StartCoroutine(DeactivatorCoroutine(_durationToDeactivateTutorial,
@@ -114,16 +114,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
 
         private void AnimateTutorialText()
         {
-            if(IsObjectNull(_tutorialTextParent)) return;
-            _tutorialTextParent.transform.DOScale(Vector3.one * 0.85f, 1.5f).SetEase(Ease.Linear)
+            if(IsObjectNull(TutorialTextParent)) return;
+            TutorialTextParent.transform.DOScale(Vector3.one * 0.85f, 1.5f).SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo);
         }
 
         private void AnimateTutorialArrow()
         {
-            if(IsObjectNull(_tutorialArrowParent.gameObject)) return;
+            if(IsObjectNull(TutorialArrowParent.gameObject)) return;
             
-            _tutorialArrowParent.transform.GetChild(0).DOMoveY(1f, 1f).SetEase(Ease.Linear)
+            TutorialArrowParent.transform.GetChild(0).DOMoveY(1f, 1f).SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo);
         }
 

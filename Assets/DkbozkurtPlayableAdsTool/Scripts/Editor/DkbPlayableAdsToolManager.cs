@@ -2,6 +2,7 @@
 //      github.com/dkbozkurt
 
 using DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -339,9 +340,36 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             #endregion
 
+            #region Tutorial Text Parent
+
+            var tutorialTextParent = GenerateUIObject("TutorialTextParent", _tutorialConnectionsObj.transform);
+            tutorialController.TutorialTextParent = tutorialTextParent;
+            var tutorialTextParentRectTransform = tutorialTextParent.GetComponent<RectTransform>();
+            tutorialTextParentRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            tutorialTextParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            tutorialTextParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            LocateRectTransform(tutorialTextParentRectTransform, new Vector2(0f,600f),new Vector2(1125f,390f));
+
+            #endregion
+
             #region Tutorial Text
 
+            var tutorialText = GenerateUIObject("TutorialText", tutorialTextParent.transform).AddComponent<TextMeshProUGUI>();
+            tutorialController.TutorialText = tutorialText;
+            var tutorialTextRectTransform = tutorialText.GetComponent<RectTransform>();
+            tutorialTextRectTransform.anchorMin = Vector2.zero;
+            tutorialTextRectTransform.anchorMax = Vector2.one;
+            tutorialTextRectTransform.pivot = new Vector2(0.5f,0.5f);
+            tutorialTextRectTransform.offsetMax = new Vector2(0, 0);
+            tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
             
+            tutorialText.text = "New Text New Text New Text New Text New Text";
+            // TODO Font Asset need to change to baloo
+            tutorialText.fontSize = 110;
+            tutorialText.characterSpacing = 0.5f;
+            tutorialText.lineSpacing = -65f;
+            tutorialText.alignment = TextAlignmentOptions.Center;
+            tutorialText.raycastTarget = false;
 
             #endregion
             
