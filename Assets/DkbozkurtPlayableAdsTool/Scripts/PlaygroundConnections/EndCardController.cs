@@ -137,14 +137,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         
         public void OpenEndCard()
         {
-            var obj = GameObject.Find("TutorialManager");
+            var obj = GameObject.Find("TutorialController");
             if(obj!= null) obj.SetActive(false);
             
-            // foreach (Transform child in transform)
-            // {
-            //     child.gameObject.SetActive(true);
-            // }
-        
             if(_isEndCardOpened) return;
             
             _isEndCardOpened = true;

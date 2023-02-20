@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsTool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Downloads/TutorialManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Helpers/SingletonBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -36,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "rider.run.widget.enabled.cache": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2020.1.17f1\Editor\Unity.exe" />
@@ -85,7 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672081325713</updated>
       <workItem from="1672081329766" duration="504000" />
-      <workItem from="1676640510428" duration="6344000" />
+      <workItem from="1676640510428" duration="6420000" />
+      <workItem from="1676872244981" duration="4743000" />
     </task>
     <servers />
   </component>
