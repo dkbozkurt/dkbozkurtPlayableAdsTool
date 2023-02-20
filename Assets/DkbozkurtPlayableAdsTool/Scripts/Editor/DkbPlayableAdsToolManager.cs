@@ -30,6 +30,10 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         private bool _bannerWithGetButton = true;
 
         private static GameObject _tutorialConnectionsObj;
+        private bool _tutorialWithText = true;
+        private bool _tutorialWithTutorialHand = true;
+        private bool _tutorialHandWithEndlessLoop = false;
+        private bool _tutorialHandWithPointGlow = false;
         
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
@@ -72,9 +76,22 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.Space(20);
             
             GUILayout.Label("Tutorial Controller",EditorStyles.boldLabel);
+            _tutorialWithText = EditorGUILayout.Toggle("Tutorial With Text", _tutorialWithText);
+            _tutorialWithTutorialHand = EditorGUILayout.Toggle("Tutorial With Tutorial Hand", _tutorialWithTutorialHand);
+            
+            if (_tutorialWithTutorialHand)
+            {
+                GUILayout.BeginHorizontal();
+                _tutorialHandWithEndlessLoop = EditorGUILayout.Toggle("Tutorial Hand With Endless Loop Image",
+                    _tutorialHandWithEndlessLoop);
+                _tutorialHandWithPointGlow =
+                    EditorGUILayout.Toggle("Tutorial Hand With Point Glow Image", _tutorialHandWithPointGlow);
+                GUILayout.EndHorizontal();
+            }    
+            
             if (GUILayout.Button("Import TutorialController",GUILayout.Width(200),GUILayout.Height(25)))
             {
-                Debug.Log("Create tutorial controller connections");
+                CallTutorialController();
             }
             
             GUILayout.Space(20);
@@ -291,6 +308,37 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             
             SetComponentAsFirstChild(bannerConnectionsRectTransform);
             Debug.Log("Banner Controller successfully instantiated!");
+        }
+
+        private void CallTutorialController()
+        {
+            if (GameObject.Find("TutorialController")) return;
+            
+            if (GameObject.Find("Canvas") == null)
+            {
+                GenerateCanvasPack();
+            }
+            else
+            {
+                _playableParentCanvas = GameObject.Find("Canvas");
+            }
+
+            #region TutorialController
+
+            _tutorialConnectionsObj = GenerateUIObject("TutorialController", _playableParentCanvas.transform);
+            var tutorialController = _tutorialConnectionsObj.AddComponent<TutorialController>();
+            var tutorialConnectionsRectTransform = _tutorialConnectionsObj.GetComponent<RectTransform>();
+            tutorialConnectionsRectTransform.anchorMin = Vector2.zero;
+            tutorialConnectionsRectTransform.anchorMax = Vector2.one;
+            tutorialConnectionsRectTransform.pivot = new Vector2(0.5f,0.5f);
+            tutorialConnectionsRectTransform.offsetMax = new Vector2(0, 0);
+            tutorialConnectionsRectTransform.offsetMin = new Vector2(0, 0);
+
+            #endregion
+            
+            
+            SetComponentAsFirstChild(tutorialConnectionsRectTransform);
+            Debug.Log("Tutorial Controller successfully instantiated!");
         }
 
         private void GenerateCanvasPack()

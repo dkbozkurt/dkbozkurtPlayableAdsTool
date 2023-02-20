@@ -14,13 +14,13 @@
                 "**/Luna/RuntimeScripts/"
             ],
             "msbuildMac64": "/Library/Frameworks/Mono.framework/Versions/Current/bin/msbuild",
-            "msbuildWin64": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+            "msbuildWin64": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\MSBuild.exe",
             "externalSources": [],
             "externalJSLibraries": [],
             "scriptingDefines": [],
-            "msbuildVersion": "16.11",
+            "msbuildVersion": "17.0",
             "monoVersion": "N/A",
-            "dotnetVersion": "5.0.404"
+            "dotnetVersion": "6.0.114"
         },
         "assets": {
             "export": [],
