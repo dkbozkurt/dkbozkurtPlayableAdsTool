@@ -4,6 +4,10 @@
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsToolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/DkbPlayableAdsToolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Baloo-Regular SDF Ft.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Baloo-Regular SDF Ft.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Baloo-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Baloo-Regular.ttf.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,7 @@
       <workItem from="1676640510428" duration="6420000" />
       <workItem from="1676872244981" duration="7882000" />
       <workItem from="1676903872108" duration="1801000" />
-      <workItem from="1676984147729" duration="5274000" />
+      <workItem from="1676984147729" duration="5931000" />
     </task>
     <servers />
   </component>

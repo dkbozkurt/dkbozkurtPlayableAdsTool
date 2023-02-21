@@ -373,7 +373,8 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
             
                 tutorialText.text = "New Text New Text New Text New Text New Text";
-                TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
+                // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
+                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("Fonts/Baloo-Regular SDF Ft");
                 tutorialText.font = fontAsset;
                 tutorialText.fontSize = 110;
                 tutorialText.characterSpacing = 0.5f;
@@ -467,10 +468,17 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             #region Tutorial World Space Arrow
 
+            if (_tutorialWithWordSpaceArrow)
+            {
+                GameObject tutorialWorldSpaceArrowPrefab =
+                    Resources.Load<GameObject>("Models/TutorialWorldSpaceArrowParent");
+                var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
+                tutorialWorldSpaceArrow.name = "TutorialWorldSpaceArrowParent";
+                tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;
+                // TODO you left here 
+            }
             
-
             #endregion
-            
             
             SetComponentAsFirstChild(tutorialConnectionsRectTransform);
             Debug.Log("Tutorial Controller successfully instantiated!");
@@ -523,6 +531,11 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             // In run time, unity event listeners can be added by following lines. 
             // button.onClick.AddListener(()=>CtaController.Instance.OpenStore());
             // button.onClick.AddListener(delegate { CtaController.Instance.OpenStore(); });
+        }
+
+        private void PreCheckForAlreadyExist()
+        {
+            // TODO pre check if there is a named object already in the scene.
         }
 
         private void SetComponentAsLastChild(RectTransform focusObj)
