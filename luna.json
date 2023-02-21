@@ -1,11 +1,11 @@
 {
-    "version": "4.5.0",
+    "version": "4.6.0",
     "projectId": "31f859b9-ff02-4898-af5d-28b2ddd2e8c5",
-    "applicationID": 0,
+    "applicationID": 7264,
     "creativeName": "",
     "pgServer": "EU",
     "window": {
-        "​ ": true
+        "​ ": true
     },
     "unity": {
         "scripts": {
@@ -32,7 +32,9 @@
                 "Assets/TextMesh Pro/Resources/TMP Settings.asset"
             ]
         },
-        "scenes": [],
+        "scenes": [
+            "Assets/DkbozkurtPlayableAdsTool/Scenes/Main.unity"
+        ],
         "disabledScenes": [],
         "startupScene": 0,
         "packages": {
@@ -62,10 +64,10 @@
             "active": true,
             "icon": "",
             "logo": "",
-            "backgroundHexColor": ""
+            "backgroundHexColor": "#FFFFFF"
         },
         "enableRealtimeShadows": false,
-        "enableLunaCompilerV2": false,
+        "enableLunaCompilerV2": true,
         "minify": true,
         "forceUncompressed": false,
         "forceBase64": false,
