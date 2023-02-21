@@ -50,34 +50,48 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
         private void UIButtons()
         {
+            GUILayout.BeginHorizontal();
             GUILayout.Label("CTA Controller",EditorStyles.boldLabel);
             if (GUILayout.Button("Import CtaController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallCtaController();
             }
-
-            GUILayout.Space(20);
+            GUILayout.EndHorizontal();
             
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
+            GUILayout.BeginHorizontal();
             GUILayout.Label("EndCard Controller",EditorStyles.boldLabel);
             if (GUILayout.Button("Import EndCardController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallEndCardController();
             }
+            GUILayout.EndHorizontal();
             
-            GUILayout.Space(20);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             
+            GUILayout.BeginHorizontal();
             GUILayout.Label("Banner Controller",EditorStyles.boldLabel);
-            _bannerWithIcon = EditorGUILayout.Toggle("With Icon", _bannerWithIcon);
-            _bannerWithText = EditorGUILayout.Toggle("With Text", _bannerWithText);
-            _bannerWithGetButton = EditorGUILayout.Toggle("With Get Button", _bannerWithGetButton);
             if (GUILayout.Button("Import BannerController",GUILayout.Width(200),GUILayout.Height(25)))
             {
                 CallBannerController();
             }
             
-            GUILayout.Space(20);
+            GUILayout.EndHorizontal();
+            _bannerWithIcon = EditorGUILayout.Toggle("With Icon", _bannerWithIcon);
+            _bannerWithText = EditorGUILayout.Toggle("With Text", _bannerWithText);
+            _bannerWithGetButton = EditorGUILayout.Toggle("With Get Button", _bannerWithGetButton);
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             
+            GUILayout.BeginHorizontal();
             GUILayout.Label("Tutorial Controller",EditorStyles.boldLabel);
+            if (GUILayout.Button("Import TutorialController",GUILayout.Width(200),GUILayout.Height(25)))
+            {
+                CallTutorialController();
+            }
+            GUILayout.EndHorizontal();
+            
             _tutorialWithText = EditorGUILayout.Toggle("With Text", _tutorialWithText);
             _tutorialWithTutorialHand = EditorGUILayout.Toggle("With Tutorial Hand", _tutorialWithTutorialHand);
             if (_tutorialWithTutorialHand)
@@ -89,16 +103,11 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     EditorGUILayout.Toggle("Hand With Point Glow Image", _tutorialHandWithPointGlow);
                 GUILayout.EndHorizontal();
             }
-
             _tutorialWithWordSpaceArrow =
                 EditorGUILayout.Toggle("With World Space Arrow", _tutorialWithWordSpaceArrow);
-            
-            if (GUILayout.Button("Import TutorialController",GUILayout.Width(200),GUILayout.Height(25)))
-            {
-                CallTutorialController();
-            }
-            
-            GUILayout.Space(20);
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
         }
 
         private void CallCtaController()
