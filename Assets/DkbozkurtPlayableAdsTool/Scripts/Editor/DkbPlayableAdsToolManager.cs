@@ -401,8 +401,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 var tutorialHandImage = tutorialHand.AddComponent<Image>();
                 tutorialHandImage.raycastTarget = false;
                 
-                // TODO burayi dikkatli bak
-                // SetComponentAsLastChild(tutorialHandRectTransform);
+                SetComponentAsLastChild(tutorialHandRectTransform);
 
                 #endregion
                 
