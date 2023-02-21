@@ -372,8 +372,8 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 tutorialTextRectTransform.offsetMax = new Vector2(0, 0);
                 tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
             
-                tutorialText.text = "New Text New Text New Text New Text New Text"; 
-                TMP_FontAsset fontAsset=  Instantiate(Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset);
+                tutorialText.text = "New Text New Text New Text New Text New Text";
+                TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
                 tutorialText.font = fontAsset;
                 tutorialText.fontSize = 110;
                 tutorialText.characterSpacing = 0.5f;
@@ -397,20 +397,33 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 tutorialHandParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 tutorialHandParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
                 LocateRectTransform(tutorialHandParentRectTransform, new Vector2(0f,-600f),new Vector2(380f,380f));
-                
-                #region Tutorial Hand Image
+
+                #region Tutorial Hand
 
                 var tutorialHand = GenerateUIObject("TutorialHand", tutorialHandParentRectTransform.transform);
                 var tutorialHandRectTransform = tutorialHand.GetComponent<RectTransform>();
                 tutorialHandRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                 tutorialHandRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 tutorialHandRectTransform.pivot = new Vector2(0.5f, 0.5f);
-                LocateRectTransform(tutorialHandRectTransform, new Vector2(190f,-180f),new Vector2(380f,380f));
-                
-                var tutorialHandImage = tutorialHand.AddComponent<Image>();
-                tutorialHandImage.raycastTarget = false;
+                LocateRectTransform(tutorialHandRectTransform, new Vector2(0f,0f),new Vector2(380f,380f));
                 
                 SetComponentAsLastChild(tutorialHandRectTransform);
+
+                #endregion
+                
+                #region Tutorial Hand Image
+
+                var tutorialHandImage = GenerateUIObject("TutorialHandImage", tutorialHandRectTransform.transform);
+                var tutorialHandImageRectTransform = tutorialHandImage.GetComponent<RectTransform>();
+                tutorialHandImageRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                tutorialHandImageRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                tutorialHandImageRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                LocateRectTransform(tutorialHandImageRectTransform, new Vector2(190f,-180f),new Vector2(380f,380f));
+                
+                var tutorialHandImage_Image = tutorialHandImage.AddComponent<Image>();
+                tutorialHandImage_Image.raycastTarget = false;
+                
+                SetComponentAsLastChild(tutorialHandImageRectTransform);
 
                 #endregion
                 
@@ -418,7 +431,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
                 if (_tutorialHandWithEndlessLoop)
                 {
-                    
+                    var tutorialEndlessLoop = GenerateUIObject("TutorialEndlessLoop", tutorialHandParentRectTransform.transform);
+                    var tutorialEndlessLoopRectTransform = tutorialEndlessLoop.GetComponent<RectTransform>();
+                    tutorialEndlessLoopRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                    tutorialEndlessLoopRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                    tutorialEndlessLoopRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                    LocateRectTransform(tutorialEndlessLoopRectTransform, new Vector2(0f,0f),new Vector2(700f, 300f));
+                
+                    var tutorialEndlessLoopImage = tutorialEndlessLoop.AddComponent<Image>();
+                    tutorialEndlessLoopImage.raycastTarget = false;
+                    SetComponentAsFirstChild(tutorialEndlessLoopRectTransform);
                 }
                 #endregion
 
@@ -426,7 +448,17 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
                 if (_tutorialHandWithPointGlow)
                 {
+                    var tutorialPointGlow = GenerateUIObject("TutorialPointGlow", tutorialHandRectTransform.transform);
+                    var tutorialPointGlowRectTransform = tutorialPointGlow.GetComponent<RectTransform>();
+                    tutorialPointGlowRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+                    tutorialPointGlowRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+                    tutorialPointGlowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+                    LocateRectTransform(tutorialPointGlowRectTransform, new Vector2(0f,0f),new Vector2(250f, 250f));
+                
+                    var tutorialPointGlowImage = tutorialPointGlow.AddComponent<Image>();
+                    tutorialPointGlowImage.raycastTarget = false;
                     
+                    SetComponentAsFirstChild(tutorialPointGlowRectTransform);
                 }
                 #endregion
             }
