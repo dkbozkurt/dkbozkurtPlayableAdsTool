@@ -63,8 +63,10 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
         private bool IsGameObjectAlreadyExistInScene(string gameObjectName)
         {
-            if (GameObject.Find(gameObjectName)) return true;
-            return false; 
+            if (!GameObject.Find(gameObjectName)) return false;
+            
+            Debug.LogWarning(gameObjectName + " already exist in the scene!");
+            return true;
         }
         
         private void SetComponentAsLastChild(RectTransform focusObj)

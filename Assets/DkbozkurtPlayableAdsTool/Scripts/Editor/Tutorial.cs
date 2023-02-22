@@ -177,10 +177,13 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
             if (_tutorialWithWordSpaceArrow)
             {
+                string tutorialWorldSpaceArrowName = "TutorialWorldSpaceArrowParent";
+                if(IsGameObjectAlreadyExistInScene(tutorialWorldSpaceArrowName)) return;
+                
                 GameObject tutorialWorldSpaceArrowPrefab =
                     Resources.Load<GameObject>("DkbozkurtPlayableAdsToolResources/Prefabs/TutorialWorldSpaceArrowParent");
                 var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
-                tutorialWorldSpaceArrow.name = "TutorialWorldSpaceArrowParent";
+                tutorialWorldSpaceArrow.name = tutorialWorldSpaceArrowName;
                 tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;
             }
             
