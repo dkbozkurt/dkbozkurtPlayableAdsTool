@@ -1,3 +1,6 @@
+// Dogukan Kaan Bozkurt
+//      github.com/dkbozkurt
+
 using DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections;
 using UnityEditor;
 using UnityEngine;
