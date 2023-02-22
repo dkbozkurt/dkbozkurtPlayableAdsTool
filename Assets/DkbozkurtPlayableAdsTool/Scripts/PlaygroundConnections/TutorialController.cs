@@ -133,7 +133,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         {
             if(IsObjectNull(TutorialArrowParent.gameObject)) return;
             
-            TutorialArrowParent.transform.GetChild(0).DOMoveY(1f, 1f).SetEase(Ease.Linear)
+            TutorialArrowParent.transform.GetChild(0).DOMoveY(2f, 1f).SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo);
         }
 
