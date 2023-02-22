@@ -13,7 +13,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         protected override void OnAwake() { }
 
         [LunaPlaygroundField("Tutorial Texts", 0, "Tutorial Settings")] [SerializeField]
-        private string[] _tutorialTexts = new string[] { };
+        private string[] _tutorialTexts = new string[]{};
 
         [Header("Core Tutorial Properties")] 
         [SerializeField] private bool _autoDeactivateTutorial = false;
@@ -42,11 +42,15 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
             TutorialHandSetterWithAnimation(true);
             TutorialArrowSetter(true);
             AnimateTutorialArrow();
-            
         }
         
         public void TutorialTextSetter(bool status,int index = 0)
         {
+            if (_tutorialTexts.Length <= 0)
+            {
+                Debug.LogError("Fill Tutorial Text array !!!");
+                return;
+            }
             if(IsObjectNull(TutorialTextParent)) return;
             
             TutorialTextParent.SetActive(status);
@@ -90,6 +94,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         
         public void TutorialArrowSetter(bool status,int index = 0)
         {
+            if (_tutorialArrowWorldSpacePositions.Length <= 0)
+            {
+                Debug.LogError("Fill Tutorial World Space Arrow Positions array !!!");
+                return;
+            }
+            
             if(IsObjectNull(TutorialArrowParent.gameObject)) return;
             
             TutorialArrowParent.gameObject.SetActive(status);

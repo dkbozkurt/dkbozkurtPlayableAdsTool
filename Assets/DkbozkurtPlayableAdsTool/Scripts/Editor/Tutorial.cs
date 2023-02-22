@@ -172,7 +172,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             if (_tutorialWithWordSpaceArrow)
             {
                 GameObject tutorialWorldSpaceArrowPrefab =
-                    Resources.Load<GameObject>("Models/TutorialWorldSpaceArrowParent");
+                    Resources.Load<GameObject>("DkbozkurtPlayableAdsToolResources/Prefabs/TutorialWorldSpaceArrowParent");
                 var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
                 tutorialWorldSpaceArrow.name = "TutorialWorldSpaceArrowParent";
                 tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;
