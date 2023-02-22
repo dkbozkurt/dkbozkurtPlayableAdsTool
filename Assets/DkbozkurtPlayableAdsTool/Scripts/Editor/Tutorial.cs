@@ -69,7 +69,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             
                 tutorialText.text = "New Text New Text New Text New Text New Text";
                 // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
-                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("Fonts/Baloo-Regular SDF Ft");
+                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("DkbozkurtPlayableAdsToolResources/Fonts/Baloo-Regular SDF Ft");
                 tutorialText.font = fontAsset;
                 tutorialText.fontSize = 110;
                 tutorialText.characterSpacing = 0.5f;
@@ -111,12 +111,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
                 var tutorialHandImage = GenerateUIObject("TutorialHandImage", tutorialHandRectTransform.transform);
                 var tutorialHandImageRectTransform = tutorialHandImage.GetComponent<RectTransform>();
-                tutorialHandImageRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-                tutorialHandImageRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-                tutorialHandImageRectTransform.pivot = new Vector2(0.5f, 0.5f);
-                LocateRectTransform(tutorialHandImageRectTransform, new Vector2(190f,-180f),new Vector2(380f,380f));
+                tutorialHandImageRectTransform.anchorMin = new Vector2(0f,1f);
+                tutorialHandImageRectTransform.anchorMax = new Vector2(0f,1f);
+                tutorialHandImageRectTransform.pivot = new Vector2(0f,1f);
+                // sprite.rect can be used for scaling image depends on resource ref witdh and height.
+                LocateRectTransform(tutorialHandImageRectTransform, new Vector2(130f,-173f),new Vector2(500f,596f));
                 
                 var tutorialHandImage_Image = tutorialHandImage.AddComponent<Image>();
+                var sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/Hand");
+                
+                tutorialHandImage_Image.sprite = sprite;
                 tutorialHandImage_Image.raycastTarget = false;
                 
                 SetComponentAsLastChild(tutorialHandImageRectTransform);
@@ -132,9 +136,10 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     tutorialEndlessLoopRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                     tutorialEndlessLoopRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                     tutorialEndlessLoopRectTransform.pivot = new Vector2(0.5f, 0.5f);
-                    LocateRectTransform(tutorialEndlessLoopRectTransform, new Vector2(0f,0f),new Vector2(700f, 300f));
+                    LocateRectTransform(tutorialEndlessLoopRectTransform, new Vector2(0f,0f),new Vector2(761f, 389f));
                 
                     var tutorialEndlessLoopImage = tutorialEndlessLoop.AddComponent<Image>();
+                    tutorialEndlessLoopImage.sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/Infinity");
                     tutorialEndlessLoopImage.raycastTarget = false;
                     SetComponentAsFirstChild(tutorialEndlessLoopRectTransform);
                 }
@@ -149,9 +154,10 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     tutorialPointGlowRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                     tutorialPointGlowRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                     tutorialPointGlowRectTransform.pivot = new Vector2(0.5f, 0.5f);
-                    LocateRectTransform(tutorialPointGlowRectTransform, new Vector2(0f,0f),new Vector2(250f, 250f));
+                    LocateRectTransform(tutorialPointGlowRectTransform, new Vector2(0f,0f),new Vector2(512f,512f));
                 
                     var tutorialPointGlowImage = tutorialPointGlow.AddComponent<Image>();
+                    tutorialPointGlowImage.sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/PointGlow");
                     tutorialPointGlowImage.raycastTarget = false;
                     
                     SetComponentAsFirstChild(tutorialPointGlowRectTransform);
