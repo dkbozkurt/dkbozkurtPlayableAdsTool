@@ -18,6 +18,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         
         private void CallBannerController()
         {
+            if (FindObjectOfType<BannerController>())
+            {
+                Debug.LogWarning("There is already a BannerController exist in the scene!");
+                return;
+            }
+            
             if (GameObject.Find("BannerController")) return;
             
             if (GameObject.Find("Canvas") == null)

@@ -20,6 +20,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         
         private void CallTutorialController()
         {
+            if (FindObjectOfType<TutorialController>())
+            {
+                Debug.LogWarning("There is already a TutorialController exist in the scene!");
+                return;
+            }
+            
             if (GameObject.Find("TutorialController")) return;
             
             if (GameObject.Find("Canvas") == null)
@@ -176,7 +182,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
                 tutorialWorldSpaceArrow.name = "TutorialWorldSpaceArrowParent";
                 tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;
-                // TODO you left here 
             }
             
             #endregion

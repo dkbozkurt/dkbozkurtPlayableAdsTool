@@ -61,11 +61,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             // button.onClick.AddListener(delegate { CtaController.Instance.OpenStore(); });
         }
 
-        private void PreCheckForAlreadyExist()
+        private bool IsGameObjectAlreadyExistInScene(string gameObjectName)
         {
-            // TODO pre check if there is a named object already in the scene.
+            if (GameObject.Find(gameObjectName)) return true;
+            return false; 
         }
-
+        
         private void SetComponentAsLastChild(RectTransform focusObj)
         {
             if(_playableParentCanvas == null) return;

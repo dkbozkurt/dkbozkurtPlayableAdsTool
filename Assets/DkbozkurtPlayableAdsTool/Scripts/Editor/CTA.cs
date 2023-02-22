@@ -13,10 +13,16 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         
         private void CallCtaController()
         {
+            if (FindObjectOfType<CtaController>())
+            {
+                Debug.LogWarning("There is already a CtaController exist in the scene!");
+                return;
+            }
+            
             if (GameObject.Find("PlayableGameManager") != null)
             {
                 _playableGameManager = GameObject.Find("PlayableGameManager");
-
+            
                 if (_playableGameManager.TryGetComponent(out CtaController ctaController))
                 {
                     return;

@@ -15,6 +15,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         
         private void CallEndCardController()
         {
+            if (FindObjectOfType<EndCardController>())
+            {
+                Debug.LogWarning("There is already an EndCardController exist in the scene!");
+                return;
+            }
+            
             if (GameObject.Find("EndCardController")) return;
 
             if (GameObject.Find("Canvas") == null)
