@@ -4,6 +4,7 @@
 using DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections;
 using TMPro;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -99,6 +100,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 tutorialHandParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 tutorialHandParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
                 LocateRectTransform(tutorialHandParentRectTransform, new Vector2(0f,-600f),new Vector2(380f,380f));
+                
+                tutorialController.TutorialHandAnimator.runtimeAnimatorController = Resources.Load<AnimatorController>
+                    ("DkbozkurtPlayableAdsToolResources/Animations/TutorialHand/TutorialHandAnimController");
 
                 #region Tutorial Hand
 
