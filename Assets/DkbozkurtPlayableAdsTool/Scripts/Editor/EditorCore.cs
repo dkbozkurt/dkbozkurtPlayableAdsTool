@@ -16,12 +16,21 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
         [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
         public static void ShowWindow()
         {
-            GetWindow<DkbPlayableAdsToolManager>("Playable Ads Tool");
+            // var window = GetWindow<DkbPlayableAdsToolManager>("Playable Ads Tool");
+            // Also can be used
+            var window = GetWindow<DkbPlayableAdsToolManager>(typeof(SceneView));
+            SetEditorIcon(window);
         }
 
         private void OnGUI()
         {
             UIVisuals();
+        }
+
+        private static void SetEditorIcon(DkbPlayableAdsToolManager window)
+        {
+            var texture = Resources.Load<Texture>("DkbozkurtPlayableAdsToolResources/Textures/PlayableAdsToolIcon");
+            window.titleContent = new GUIContent("Playable Ads Tool", texture, "Helpful tool for developing playable ads by using LunaLabs.");
         }
 
         private void UIVisuals()
