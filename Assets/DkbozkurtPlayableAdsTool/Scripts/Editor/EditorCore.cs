@@ -99,6 +99,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             GUILayout.EndHorizontal();
             
             _tutorialWithText = EditorGUILayout.Toggle("With Text", _tutorialWithText);
+            _tutorialWithTopBannerText = EditorGUILayout.Toggle("With Top Banner Text", _tutorialWithTopBannerText);
             _tutorialWithTutorialHand = EditorGUILayout.Toggle("With Tutorial Hand", _tutorialWithTutorialHand);
             if (_tutorialWithTutorialHand)
             {

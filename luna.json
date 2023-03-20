@@ -20,7 +20,7 @@
             "scriptingDefines": [],
             "msbuildVersion": "17.0",
             "monoVersion": "N/A",
-            "dotnetVersion": "7.0.200"
+            "dotnetVersion": "7.0.202"
         },
         "assets": {
             "export": [],

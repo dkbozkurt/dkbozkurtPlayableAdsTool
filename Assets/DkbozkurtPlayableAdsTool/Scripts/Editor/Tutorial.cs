@@ -13,12 +13,13 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
     public partial class DkbPlayableAdsToolManager : EditorWindow
     {
         private GameObject _tutorialConnectionsObj;
-        private bool _tutorialWithText = true;
-        private bool _tutorialWithTutorialHand = true;
-        private bool _tutorialHandWithEndlessLoop = true;
-        private bool _tutorialHandWithPointGlow = true;
+        private bool _tutorialWithText = false;
+        private bool _tutorialWithTopBannerText = false;
+        private bool _tutorialWithTutorialHand = false;
+        private bool _tutorialHandWithEndlessLoop = false;
+        private bool _tutorialHandWithPointGlow = false;
         private bool _tutorialWithWordSpaceArrow = false;
-        
+
         private void CallTutorialController()
         {
             if (FindObjectOfType<TutorialController>())
@@ -88,6 +89,48 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             }
             #endregion
 
+            #region Tutorial Top Banner Text
+
+            if (_tutorialWithTopBannerText)
+            {
+                var tutorialTopBannerTextParent = GenerateUIObject("TutorialTopBannerTextParent", _tutorialConnectionsObj.transform);
+                tutorialController.TutorialTopBannerTextParent = tutorialTopBannerTextParent;
+                var tutorialTopBannerTextParentRectTransform =
+                    tutorialTopBannerTextParent.GetComponent<RectTransform>();
+                tutorialTopBannerTextParentRectTransform.anchorMin = new Vector2(0f, 1f);
+                tutorialTopBannerTextParentRectTransform.anchorMax = new Vector2(1f, 1f);
+                tutorialTopBannerTextParentRectTransform.pivot = new Vector2(0.5f, 1f);
+                LocateRectTransform(tutorialTopBannerTextParentRectTransform, new Vector2(0f,0f),new Vector2(0f,150f));
+                
+                var tutorialTopBannerBackgroundImage = tutorialTopBannerTextParent.AddComponent<Image>();
+                tutorialTopBannerBackgroundImage.raycastTarget = false;
+                tutorialTopBannerBackgroundImage.color = Color.black;
+
+                #region Tutorial Top Banner Text
+                
+                var tutorialTopBannerText = GenerateUIObject("TutorialTopBannerText", tutorialTopBannerTextParent.transform).AddComponent<TextMeshProUGUI>();
+                tutorialController.TutorialTopBannerText = tutorialTopBannerText;
+                var tutorialTopBannerTextRectTransform = tutorialTopBannerText.GetComponent<RectTransform>();
+                tutorialTopBannerTextRectTransform.anchorMin = new Vector2(0.5f,0.5f);
+                tutorialTopBannerTextRectTransform.anchorMax = new Vector2(0.5f,0.5f);
+                tutorialTopBannerTextRectTransform.pivot = new Vector2(0.5f,0.5f);
+                LocateRectTransform(tutorialTopBannerTextRectTransform, new Vector2(0f,0f),new Vector2(1125f,150f));
+            
+                tutorialTopBannerText.text = "New Text New Text New Text New Text New Text";
+                // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
+                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("DkbozkurtPlayableAdsToolResources/Fonts/Baloo-Regular SDF Ft");
+                tutorialTopBannerText.font = fontAsset;
+                tutorialTopBannerText.fontSize = 50;
+                tutorialTopBannerText.lineSpacing = -35f;
+                tutorialTopBannerText.alignment = TextAlignmentOptions.Center;
+                tutorialTopBannerText.alignment = TextAlignmentOptions.Midline;
+                tutorialTopBannerText.raycastTarget = false;
+
+                #endregion
+            }
+            
+            #endregion
+            
             #region Tutorial Hand Parent
 
             if (_tutorialWithTutorialHand)
