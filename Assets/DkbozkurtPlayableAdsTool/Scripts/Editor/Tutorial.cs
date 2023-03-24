@@ -77,7 +77,8 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             
                 tutorialText.text = "New Text New Text New Text New Text New Text";
                 // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
-                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("DkbozkurtPlayableAdsToolResources/Fonts/Baloo-Regular SDF Ft");
+                TMP_FontAsset fontAsset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset");
+                
                 tutorialText.font = fontAsset;
                 tutorialText.fontSize = 110;
                 tutorialText.characterSpacing = 0.5f;
@@ -118,7 +119,8 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             
                 tutorialTopBannerText.text = "New Text New Text New Text New Text New Text";
                 // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
-                TMP_FontAsset fontAsset = Resources.Load<TMP_FontAsset>("DkbozkurtPlayableAdsToolResources/Fonts/Baloo-Regular SDF Ft");
+                TMP_FontAsset fontAsset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset");
+                
                 tutorialTopBannerText.font = fontAsset;
                 tutorialTopBannerText.fontSize = 50;
                 tutorialTopBannerText.lineSpacing = -35f;
@@ -144,8 +146,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 tutorialHandParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
                 LocateRectTransform(tutorialHandParentRectTransform, new Vector2(0f,-600f),new Vector2(380f,380f));
                 
-                tutorialController.TutorialHandAnimator.runtimeAnimatorController = Resources.Load<AnimatorController>
-                    ("DkbozkurtPlayableAdsToolResources/Animations/TutorialHand/TutorialHandAnimController");
+                tutorialController.TutorialHandAnimator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<AnimatorController>
+                    ("Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller");
+                
 
                 #region Tutorial Hand
 
@@ -171,7 +174,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 LocateRectTransform(tutorialHandImageRectTransform, new Vector2(130f,-173f),new Vector2(500f,596f));
                 
                 var tutorialHandImage_Image = tutorialHandImage.AddComponent<Image>();
-                var sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/Hand");
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/Hand.png");
                 
                 tutorialHandImage_Image.sprite = sprite;
                 tutorialHandImage_Image.raycastTarget = false;
@@ -192,7 +195,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     LocateRectTransform(tutorialEndlessLoopRectTransform, new Vector2(0f,0f),new Vector2(761f, 389f));
                 
                     var tutorialEndlessLoopImage = tutorialEndlessLoop.AddComponent<Image>();
-                    tutorialEndlessLoopImage.sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/Infinity");
+                    tutorialEndlessLoopImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/Infinity.png");
                     tutorialEndlessLoopImage.raycastTarget = false;
                     SetComponentAsFirstChild(tutorialEndlessLoopRectTransform);
                 }
@@ -210,7 +213,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     LocateRectTransform(tutorialPointGlowRectTransform, new Vector2(0f,0f),new Vector2(512f,512f));
                 
                     var tutorialPointGlowImage = tutorialPointGlow.AddComponent<Image>();
-                    tutorialPointGlowImage.sprite = Resources.Load<Sprite>("DkbozkurtPlayableAdsToolResources/Textures/PointGlow");
+                    tutorialPointGlowImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/PointGlow.png");
                     tutorialPointGlowImage.raycastTarget = false;
                     
                     SetComponentAsFirstChild(tutorialPointGlowRectTransform);
@@ -228,7 +231,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 if(IsGameObjectAlreadyExistInScene(tutorialWorldSpaceArrowName)) return;
                 
                 GameObject tutorialWorldSpaceArrowPrefab =
-                    Resources.Load<GameObject>("DkbozkurtPlayableAdsToolResources/Prefabs/TutorialWorldSpaceArrowParent");
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/DkbozkurtPlayableAdsTool/Prefabs/TutorialWorldSpaceArrowParent.prefab");
                 var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
                 tutorialWorldSpaceArrow.name = tutorialWorldSpaceArrowName;
                 tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;

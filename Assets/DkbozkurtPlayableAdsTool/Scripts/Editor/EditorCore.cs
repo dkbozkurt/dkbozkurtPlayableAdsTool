@@ -29,7 +29,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
 
         private static void SetEditorIcon(DkbPlayableAdsToolManager window)
         {
-            var texture = Resources.Load<Texture>("DkbozkurtPlayableAdsToolResources/Textures/PlayableAdsToolIcon");
+            //var texture = Resources.Load<Texture>("DkbozkurtPlayableAdsToolResources/Textures/PlayableAdsToolIcon");
+            var texture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/DkbozkurtPlayableAdsTool/Textures/PlayableAdsToolIcon.png");
+            
             window.titleContent = new GUIContent("Playable Ads Tool", texture, "Helpful tool for developing playable ads by using LunaLabs.");
         }
 
