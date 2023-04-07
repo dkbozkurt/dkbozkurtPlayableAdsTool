@@ -3,71 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/Swerve.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/Swerve.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Models/Arrow Mark.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Models/Arrow Mark.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Models/Waiting Marks.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Models/Waiting Marks.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Prefabs/TutorialWorldSpaceArrowParent.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Prefabs/TutorialWorldSpaceArrowParent.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scenes/Main.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scenes/Main.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scenes/MainSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scenes/MainSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Banner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Banner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/CTA.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/CTA.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/EditorCore.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/EditorCore.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/EndCard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/EndCard.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Helpers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Helpers.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Tutorial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Editor/Tutorial.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Helpers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Helpers/SingletonBehaviour.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/Helpers/SingletonBehaviour.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/BannerController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/CtaController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/CtaController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/EndCardController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Scripts/PlaygroundConnections/TutorialController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/Hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/Hand.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/Infinity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/Infinity.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/PlayableAdsToolIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/PlayableAdsToolIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/PointGlow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DkbozkurtPlayableAdsTool/Textures/PointGlow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luna.json" beforeDir="false" afterPath="$PROJECT_DIR$/luna.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +96,7 @@
       <workItem from="1679295564902" duration="1888000" />
       <workItem from="1679647474187" duration="653000" />
       <workItem from="1680847503320" duration="1368000" />
+      <workItem from="1680849031066" duration="1237000" />
     </task>
     <servers />
   </component>
