@@ -1,14 +1,11 @@
-// Dogukan Kaan Bozkurt
-//      github.com/dkbozkurt
-
-using DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections;
+using PlayableAdsTool.Scripts.PlaygroundConnections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.Editor
+namespace PlayableAdsTool.Scripts.Editor
 {
-    public partial class DkbPlayableAdsToolManager : EditorWindow
+    public partial class PlayableAdsToolManager : EditorWindow
     {
         private GameObject _bannerConnectionsObj;
         private Button _bannerButton;

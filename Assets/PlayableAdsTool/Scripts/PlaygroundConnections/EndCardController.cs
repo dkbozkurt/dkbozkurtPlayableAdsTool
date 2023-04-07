@@ -1,14 +1,11 @@
-﻿// Dogukan Kaan Bozkurt
-//      github.com/dkbozkurt
-
-using System;
+﻿using System;
 using System.Collections;
 using DG.Tweening;
 using DkbozkurtPlayableAdsTool.Scripts.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
+namespace PlayableAdsTool.Scripts.PlaygroundConnections
 {
     public enum EndCarCallType
     {
@@ -19,24 +16,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
         GatherInTheMiddleDynamicPlayButton,
     }
     
-    /// <summary>
-    /// IMPORTANT NOTES :
-    ///     All end card components MUST be child of EndCardController object.
-    ///     "_endCardBackground" object MUST have button property that connects to "CtaController.OpenStore".
-    ///     "_endCardBackground" MUST be the parent of all other end card components, which also should be set active false.
-    ///     "_endCardBackground" objects, child objects gotta be set active true
-    ///     All other sub images MUST ignore "Raycast Target"
-    ///     All end card components MUST have scale of 1 and alpha 1.
-    ///
-    ///     #####   #####   #####
-    /// 
-    ///     EndCard (with EndCardController.cs)
-    ///         -> EndCardBackground (Set active false)
-    ///             -> End Card Icon (Set active true)
-    ///             -> End Card Text (Set active true)
-    ///             -> End Card Play Button  (Set active true)
-    /// 
-    /// </summary>
     public class EndCardController : SingletonBehaviour<EndCardController>
     {
         public static Action OnGameEnd;

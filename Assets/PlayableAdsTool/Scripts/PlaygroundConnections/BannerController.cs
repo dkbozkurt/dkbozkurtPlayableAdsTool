@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
+namespace PlayableAdsTool.Scripts.PlaygroundConnections
 {
     public class BannerController : MonoBehaviour
     {

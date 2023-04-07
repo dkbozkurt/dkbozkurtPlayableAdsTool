@@ -1,24 +1,18 @@
-// Dogukan Kaan Bozkurt
-//      github.com/dkbozkurt
-
-using DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections;
+using PlayableAdsTool.Scripts.PlaygroundConnections;
 using TMPro;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.Editor
+namespace PlayableAdsTool.Scripts.Editor
 {
-    public partial class DkbPlayableAdsToolManager : EditorWindow
+    public partial class PlayableAdsToolManager : EditorWindow
     {
         private GameObject _tutorialConnectionsObj;
-        private bool _tutorialWithText = false;
-        private bool _tutorialWithTopBannerText = false;
         private bool _tutorialWithTutorialHand = false;
         private bool _tutorialHandWithEndlessLoop = false;
         private bool _tutorialHandWithPointGlow = false;
-        private bool _tutorialWithWordSpaceArrow = false;
 
         private void CallTutorialController()
         {
@@ -51,87 +45,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             tutorialConnectionsRectTransform.offsetMin = new Vector2(0, 0);
 
             #endregion
-
-            #region Tutorial Text Parent
-
-            if (_tutorialWithText)
-            {
-                var tutorialTextParent = GenerateUIObject("TutorialTextParent", _tutorialConnectionsObj.transform);
-                tutorialController.TutorialTextParent = tutorialTextParent;
-                var tutorialTextParentRectTransform = tutorialTextParent.GetComponent<RectTransform>();
-                tutorialTextParentRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-                tutorialTextParentRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-                tutorialTextParentRectTransform.pivot = new Vector2(0.5f, 0.5f);
-                LocateRectTransform(tutorialTextParentRectTransform, new Vector2(0f,600f),new Vector2(1125f,390f));
-                
-                #region Tutorial Text
-
-                var tutorialText = GenerateUIObject("TutorialText", tutorialTextParent.transform).AddComponent<TextMeshProUGUI>();
-                tutorialController.TutorialText = tutorialText;
-                var tutorialTextRectTransform = tutorialText.GetComponent<RectTransform>();
-                tutorialTextRectTransform.anchorMin = Vector2.zero;
-                tutorialTextRectTransform.anchorMax = Vector2.one;
-                tutorialTextRectTransform.pivot = new Vector2(0.5f,0.5f);
-                tutorialTextRectTransform.offsetMax = new Vector2(0, 0);
-                tutorialTextRectTransform.offsetMin = new Vector2(0, 0);
-            
-                tutorialText.text = "New Text New Text New Text New Text New Text";
-                // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
-                TMP_FontAsset fontAsset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset");
-                
-                tutorialText.font = fontAsset;
-                tutorialText.fontSize = 110;
-                tutorialText.characterSpacing = 0.5f;
-                tutorialText.lineSpacing = -65f;
-                tutorialText.alignment = TextAlignmentOptions.Center;
-                tutorialText.raycastTarget = false;
-
-                #endregion
-            }
-            #endregion
-
-            #region Tutorial Top Banner Text
-
-            if (_tutorialWithTopBannerText)
-            {
-                var tutorialTopBannerTextParent = GenerateUIObject("TutorialTopBannerTextParent", _tutorialConnectionsObj.transform);
-                tutorialController.TutorialTopBannerTextParent = tutorialTopBannerTextParent;
-                var tutorialTopBannerTextParentRectTransform =
-                    tutorialTopBannerTextParent.GetComponent<RectTransform>();
-                tutorialTopBannerTextParentRectTransform.anchorMin = new Vector2(0f, 1f);
-                tutorialTopBannerTextParentRectTransform.anchorMax = new Vector2(1f, 1f);
-                tutorialTopBannerTextParentRectTransform.pivot = new Vector2(0.5f, 1f);
-                LocateRectTransform(tutorialTopBannerTextParentRectTransform, new Vector2(0f,0f),new Vector2(0f,150f));
-                
-                var tutorialTopBannerBackgroundImage = tutorialTopBannerTextParent.AddComponent<Image>();
-                tutorialTopBannerBackgroundImage.raycastTarget = false;
-                tutorialTopBannerBackgroundImage.color = Color.black;
-
-                #region Tutorial Top Banner Text
-                
-                var tutorialTopBannerText = GenerateUIObject("TutorialTopBannerText", tutorialTopBannerTextParent.transform).AddComponent<TextMeshProUGUI>();
-                tutorialController.TutorialTopBannerText = tutorialTopBannerText;
-                var tutorialTopBannerTextRectTransform = tutorialTopBannerText.GetComponent<RectTransform>();
-                tutorialTopBannerTextRectTransform.anchorMin = new Vector2(0.5f,0.5f);
-                tutorialTopBannerTextRectTransform.anchorMax = new Vector2(0.5f,0.5f);
-                tutorialTopBannerTextRectTransform.pivot = new Vector2(0.5f,0.5f);
-                LocateRectTransform(tutorialTopBannerTextRectTransform, new Vector2(0f,0f),new Vector2(1125f,150f));
-            
-                tutorialTopBannerText.text = "New Text New Text New Text New Text New Text";
-                // TMP_FontAsset fontAsset = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset))[0] as TMP_FontAsset;
-                TMP_FontAsset fontAsset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/DkbozkurtPlayableAdsTool/Fonts/Baloo-Regular SDF Ft.asset");
-                
-                tutorialTopBannerText.font = fontAsset;
-                tutorialTopBannerText.fontSize = 50;
-                tutorialTopBannerText.lineSpacing = -35f;
-                tutorialTopBannerText.alignment = TextAlignmentOptions.Center;
-                tutorialTopBannerText.alignment = TextAlignmentOptions.Midline;
-                tutorialTopBannerText.raycastTarget = false;
-
-                #endregion
-            }
-            
-            #endregion
             
             #region Tutorial Hand Parent
 
@@ -147,7 +60,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 LocateRectTransform(tutorialHandParentRectTransform, new Vector2(0f,-600f),new Vector2(380f,380f));
                 
                 tutorialController.TutorialHandAnimator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<AnimatorController>
-                    ("Assets/DkbozkurtPlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller");
+                    ("Assets/PlayableAdsTool/Animations/TutorialHand/TutorialHandAnimController.controller");
                 
 
                 #region Tutorial Hand
@@ -174,7 +87,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                 LocateRectTransform(tutorialHandImageRectTransform, new Vector2(130f,-173f),new Vector2(500f,596f));
                 
                 var tutorialHandImage_Image = tutorialHandImage.AddComponent<Image>();
-                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/Hand.png");
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/PlayableAdsTool/Textures/Hand.png");
                 
                 tutorialHandImage_Image.sprite = sprite;
                 tutorialHandImage_Image.raycastTarget = false;
@@ -195,7 +108,7 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     LocateRectTransform(tutorialEndlessLoopRectTransform, new Vector2(0f,0f),new Vector2(761f, 389f));
                 
                     var tutorialEndlessLoopImage = tutorialEndlessLoop.AddComponent<Image>();
-                    tutorialEndlessLoopImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/Infinity.png");
+                    tutorialEndlessLoopImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/PlayableAdsTool/Textures/Infinity.png");
                     tutorialEndlessLoopImage.raycastTarget = false;
                     SetComponentAsFirstChild(tutorialEndlessLoopRectTransform);
                 }
@@ -213,28 +126,12 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     LocateRectTransform(tutorialPointGlowRectTransform, new Vector2(0f,0f),new Vector2(512f,512f));
                 
                     var tutorialPointGlowImage = tutorialPointGlow.AddComponent<Image>();
-                    tutorialPointGlowImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/DkbozkurtPlayableAdsTool/Textures/PointGlow.png");
+                    tutorialPointGlowImage.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/PlayableAdsTool/Textures/PointGlow.png");
                     tutorialPointGlowImage.raycastTarget = false;
                     
                     SetComponentAsFirstChild(tutorialPointGlowRectTransform);
                 }
                 #endregion
-            }
-            
-            #endregion
-
-            #region Tutorial World Space Arrow
-
-            if (_tutorialWithWordSpaceArrow)
-            {
-                string tutorialWorldSpaceArrowName = "TutorialWorldSpaceArrowParent";
-                if(IsGameObjectAlreadyExistInScene(tutorialWorldSpaceArrowName)) return;
-                
-                GameObject tutorialWorldSpaceArrowPrefab =
-                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/DkbozkurtPlayableAdsTool/Prefabs/TutorialWorldSpaceArrowParent.prefab");
-                var tutorialWorldSpaceArrow = Instantiate(tutorialWorldSpaceArrowPrefab);
-                tutorialWorldSpaceArrow.name = tutorialWorldSpaceArrowName;
-                tutorialController.TutorialArrowParent = tutorialWorldSpaceArrow.transform;
             }
             
             #endregion

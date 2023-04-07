@@ -1,24 +1,16 @@
-// Dogukan Kaan Bozkurt
-//      github.com/dkbozkurt
-
 using UnityEditor;
 using UnityEngine;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.Editor
+namespace PlayableAdsTool.Scripts.Editor
 {
-    /// <summary>
-    /// TOOLS OPTION'S FUNCTIONS HAS TO BE 'STATIC' !!!
-    /// </summary>
-    public partial class DkbPlayableAdsToolManager : EditorWindow
+    public partial class PlayableAdsToolManager : EditorWindow
     {
         private GameObject _playableParentCanvas;
         
-        [MenuItem("Tools/Dkbozkurt/PlayableAdsTool")]
+        [MenuItem("Tools/PlayableAdsTool")]
         public static void ShowWindow()
         {
-            // var window = GetWindow<DkbPlayableAdsToolManager>("Playable Ads Tool");
-            // Also can be used
-            var window = GetWindow<DkbPlayableAdsToolManager>(typeof(SceneView));
+            var window = GetWindow<PlayableAdsTool.Scripts.Editor.PlayableAdsToolManager>(typeof(SceneView));
             SetEditorIcon(window);
         }
 
@@ -27,10 +19,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             UIVisuals();
         }
 
-        private static void SetEditorIcon(DkbPlayableAdsToolManager window)
+        private static void SetEditorIcon(PlayableAdsTool.Scripts.Editor.PlayableAdsToolManager window)
         {
-            //var texture = Resources.Load<Texture>("DkbozkurtPlayableAdsToolResources/Textures/PlayableAdsToolIcon");
-            var texture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/DkbozkurtPlayableAdsTool/Textures/PlayableAdsToolIcon.png");
+            var texture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/PlayableAdsTool/Textures/PlayableAdsToolIcon.png");
             
             window.titleContent = new GUIContent("Playable Ads Tool", texture, "Helpful tool for developing playable ads by using LunaLabs.");
         }
@@ -50,6 +41,9 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             
             TutorialArea();
+            
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
         }
 
         private void CtaArea()
@@ -100,8 +94,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
             }
             GUILayout.EndHorizontal();
             
-            _tutorialWithText = EditorGUILayout.Toggle("With Text", _tutorialWithText);
-            _tutorialWithTopBannerText = EditorGUILayout.Toggle("With Top Banner Text", _tutorialWithTopBannerText);
             _tutorialWithTutorialHand = EditorGUILayout.Toggle("With Tutorial Hand", _tutorialWithTutorialHand);
             if (_tutorialWithTutorialHand)
             {
@@ -112,10 +104,6 @@ namespace DkbozkurtPlayableAdsTool.Scripts.Editor
                     EditorGUILayout.Toggle("Hand With Point Glow Image", _tutorialHandWithPointGlow);
                 GUILayout.EndHorizontal();
             }
-            _tutorialWithWordSpaceArrow =
-                EditorGUILayout.Toggle("With World Space Arrow", _tutorialWithWordSpaceArrow);
-
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         }
     }
 }

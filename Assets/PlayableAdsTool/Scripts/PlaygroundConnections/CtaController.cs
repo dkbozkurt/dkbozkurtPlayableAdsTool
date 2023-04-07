@@ -1,16 +1,10 @@
-﻿// Dogukan Kaan Bozkurt
-//      github.com/dkbozkurt
-
-using System;
+﻿using System;
 using System.Collections;
 using DkbozkurtPlayableAdsTool.Scripts.Helpers;
 using UnityEngine;
 
-namespace DkbozkurtPlayableAdsTool.Scripts.PlaygroundConnections
+namespace PlayableAdsTool.Scripts.PlaygroundConnections
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class CtaController : SingletonBehaviour<CtaController>
     {
         [LunaPlaygroundField("Open store after seconds", 0, "Store Settings")] [SerializeField]
