@@ -8,9 +8,9 @@ namespace PlayableAdsKit.Scripts.Editor
     public class PlayableAdsKit : EditorWindow
     {
         private static readonly string _toolTitle = "PlayableAdsKit";
-        private static readonly string _logoPath_128x32 = "Assets/PlayableAdsKit/Textures/Editor/logo_128x32.png";
-        private static readonly string _logoPath_64x16 = "Assets/PlayableAdsKit/Textures/Editor/logo_64x16.png";
-        private static readonly string _footerText = "©️Justdice";
+        private static readonly string _logoPath_128x32 = "Assets/PlayableAdsKit/Textures/Editor/waffle_logo.png";
+        private static readonly string _logoPath_64x16 = "Assets/PlayableAdsKit/Textures/Editor/waffle_logo.png";
+        private static readonly string _footerText = "©dkbozkurt";
         private static readonly string _helperurl =
             "https://justdice.atlassian.net/wiki/spaces/DT/pages/36372513/Welcome+Design";
         
@@ -29,7 +29,7 @@ namespace PlayableAdsKit.Scripts.Editor
         private KitButtonBase[] _kitButtons;
         private KitButtonBase _selectedKitButton;
 
-        [MenuItem("Tools/JustDice/PlayableAdsKit %F1",priority = 300)]
+        [MenuItem("Tools/DKBOZKURT/PlayableAdsKit %F1",priority = 300)]
         public static void ShowWindow()
         {
             _window = GetWindow<PlayableAdsKit>(typeof(SceneView));
@@ -201,7 +201,7 @@ namespace PlayableAdsKit.Scripts.Editor
             GUILayout.FlexibleSpace();
         }
 
-        private void GetLogo(float targetWidth=128f, float targetHeight=32f)
+        private void GetLogo(float targetWidth=128f, float targetHeight=128f)
         {
             GUIStyle textureStyle = new GUIStyle { normal = { background = _logo_128x32 } };
             GUILayout.Label(GUIContent.none, textureStyle, GUILayout.Width(targetWidth), GUILayout.Height(targetHeight));
