@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -777816280, guid: b318e4192e8088a489a79c024eddd99e, type: 3}
+  m_Script: {fileID: -777816280, guid: 69fcb1f1970c7304f86558f64ac6941d, type: 3}
   m_Name: SVC_Luna
   m_EditorClassIdentifier: 
   _svcLunaVersion: 1
@@ -21,3 +21,13 @@ MonoBehaviour:
   _shaderParsedShaders: []
   _modifiedShaders: []
   invalidShaders: 0
+  _sceneLightData:
+    PointLightCount: 0
+    SpotLightCount: 0
+    DirectionalLightCount: 0
+    LightmapOn: 0
+    DirlightmapCombined: 0
+    DirectionalCookieExists: 0
+    PointCookieExists: 0
+    SpotCookieExists: 0
+    AddiitonalLightsKeywordRequired: 0

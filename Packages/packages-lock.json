@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
-      "version": "2.0.0",
+      "version": "2.0.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -15,7 +21,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.18",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -24,7 +30,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.17",
+      "version": "2.0.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -37,52 +43,6 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.mathematics": {
-      "version": "1.1.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.render-pipelines.core": {
-      "version": "10.10.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.render-pipelines.universal": {
-      "version": "10.4.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.render-pipelines.core": "10.4.0",
-        "com.unity.shadergraph": "10.4.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.searcher": {
-      "version": "4.3.2",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.shadergraph": {
-      "version": "10.10.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "10.10.1",
-        "com.unity.searcher": "4.3.2"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
@@ -106,7 +66,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.4.8",
+      "version": "1.6.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -126,8 +86,18 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.visualscripting": {
+      "version": "1.8.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "uk.lunalabs.luna": {
-      "version": "file:../../../../D/LUNA 4.6.0/scripts",
+      "version": "file:C:/D/LUNA/LUNA 5.5.0/scripts",
       "depth": 0,
       "source": "local",
       "dependencies": {}
@@ -161,14 +131,6 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
-    },
-    "com.unity.modules.cloth": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      }
     },
     "com.unity.modules.director": {
       "version": "1.0.0",
