@@ -318,6 +318,32 @@ namespace PlayableAdsKit.Scripts.Utilities
         }
 
         /// <summary>
+        /// Select object by mouse with layer mask for 3D objects.
+        /// </summary>
+        /// <param name="layerMask">Specified layer.</param>
+        /// <returns></returns>
+        public static GameObject Select3DObjectOnRelease(LayerMask layerMask)
+        {
+            Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, _maxRayDistance,layerMask) && Input.GetMouseButtonUp(0)) return hit.transform.gameObject;
+            return null;
+        }
+
+        /// <summary>
+        /// Select object by mouse with layer mask for 3D objects.
+        /// </summary>
+        /// <param name="layerMask">Specified layer.</param>
+        /// <returns></returns>
+        public static GameObject Select3DObjectOnHold(LayerMask layerMask)
+        {
+            Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, _maxRayDistance,layerMask) && Input.GetMouseButton(0)) return hit.transform.gameObject;
+            return null;
+        }
+
+        /// <summary>
         /// Detect UI elements by sending ray from the camera to game and return first detected ui element gameObject.
         /// </summary>
         /// <param name="layerMaskIndex">Layer mask index for UI</param>
