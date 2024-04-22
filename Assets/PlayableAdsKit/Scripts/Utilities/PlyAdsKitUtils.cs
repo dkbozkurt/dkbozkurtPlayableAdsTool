@@ -478,6 +478,92 @@ namespace PlayableAdsKit.Scripts.Utilities
         {
             return Random.onUnitSphere * sphereRadius;
         }
+        
+        /// <summary>
+        /// Returns a Vector3 path with 3 points with an offset value for the middle point
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <returns></returns>
+        public static Vector2[] GetRandomPathBetweenPoints2D(Vector2 startPoint, Vector2 endPoint, float noiseValue = 2f)
+        {
+            Vector2[] path = new Vector2[3];
+            path[0] = startPoint;
+            path[2] = endPoint;
+            path[1] = (path[2] - path[0])/2f + (Vector2.right * Random.Range(-1 * noiseValue, noiseValue));
+
+            return path;
+        }
+        
+        /// <summary>
+        /// Returns a Vector3 path with 3 points with an offset value for the middle point in 3D
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <returns></returns>
+        public static Vector3[] GetRandomPathBetweenPoints3D(Vector3 startPoint, Vector3 endPoint, float noiseValue = 2f)
+        {
+            Vector3[] path = new Vector3[3];
+            path[0] = startPoint;
+            path[2] = endPoint;
+            path[1] = (path[2] - path[0])/2f + (Vector3.right * Random.Range(-1 * noiseValue, noiseValue)) + (Vector3.forward * Random.Range(-1 * noiseValue, noiseValue));
+
+            return path;
+        }
+        
+        /// <summary>
+        /// Returns a Vector3 path with given number of points with an offset value for the noise
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <param name="noiseValue"></param>
+        /// <param name="numberOfPoints"></param>
+        /// <returns></returns>
+        public static Vector2[] GetRandomPathBetweenPoints2D(Vector2 startPoint, Vector2 endPoint,
+            float noiseValue = 2f, int numberOfPoints = 3)
+        {
+            if (numberOfPoints < 3) throw new ArgumentOutOfRangeException(nameof(numberOfPoints));
+            
+            Vector2[] path = new Vector2[numberOfPoints];
+            path[0] = startPoint;
+            path[numberOfPoints - 1] = endPoint;
+
+            var stepValue = (path[numberOfPoints - 1] - path[0]) / (numberOfPoints-1);
+            
+            for (int i = 1; i < numberOfPoints-1; i++)
+            {
+                path[i] = stepValue * i + (Vector2.right * Random.Range(-1 * noiseValue, noiseValue));
+            }
+
+            return path;
+        }
+        
+        /// <summary>
+        /// Returns a Vector3 path with given number of points with an offset value for the noise in 3D
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <param name="noiseValue"></param>
+        /// <param name="numberOfPoints"></param>
+        /// <returns></returns>
+        public static Vector3[] GetRandomPathBetweenPoints3D(Vector3 startPoint, Vector3 endPoint,
+            float noiseValue = 2f, int numberOfPoints = 3)
+        {
+            if (numberOfPoints < 3) throw new ArgumentOutOfRangeException(nameof(numberOfPoints));
+            
+            Vector3[] path = new Vector3[numberOfPoints];
+            path[0] = startPoint;
+            path[numberOfPoints - 1] = endPoint;
+
+            var stepValue = (path[numberOfPoints - 1] - path[0]) / (numberOfPoints-1);
+            
+            for (int i = 1; i < numberOfPoints-1; i++)
+            {
+                path[i] = stepValue * i + (Vector3.right * Random.Range(-1 * noiseValue, noiseValue)) + (Vector3.forward * Random.Range(-1 * noiseValue, noiseValue));
+            }
+
+            return path;
+        }
 
         #endregion
 
@@ -700,6 +786,12 @@ namespace PlayableAdsKit.Scripts.Utilities
         {
             return Camera.WorldToScreenPoint(targetTransformPosition);
         }
+
+        #endregion
+
+        #region CustomAnimations
+
+        
 
         #endregion
 
