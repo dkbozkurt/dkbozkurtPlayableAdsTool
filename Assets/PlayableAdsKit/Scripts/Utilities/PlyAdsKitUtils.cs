@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
@@ -791,8 +792,19 @@ namespace PlayableAdsKit.Scripts.Utilities
 
         #region CustomAnimations
 
+        public static void AnimateCurvyPath(this Transform thisTransform, Vector3[] path, Vector3 startPoint, Vector3 endPoint, float speed, Action callback = null)
+        {
+            thisTransform.position = startPoint;
+            
+            thisTransform.DOPath(path, speed, PathType.CatmullRom)
+                .SetEase(Ease.OutQuad)
+                .SetSpeedBased()
+                .OnComplete(() =>
+                {
+                    callback?.Invoke();
+                });
+        }
         
-
         #endregion
 
     }
