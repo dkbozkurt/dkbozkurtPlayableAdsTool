@@ -1,14 +1,14 @@
 {
-    "version": "5.5.0",
+    "version": "6.0.0",
     "projectId": "31f859b9-ff02-4898-af5d-28b2ddd2e8c5",
     "applicationID": 6052,
     "creativeName": "",
     "pgServer": "EU",
     "window": {
-        "‐ ": true
+        "‐ ": true
     },
     "unity": {
-        "environmentID": 1144182322,
+        "environmentID": 1144181264,
         "scripts": {
             "excludes": [
                 "**/Editor/",
@@ -55,7 +55,7 @@
             "externalJSLibraries": [],
             "scriptingDefines": [],
             "msbuildVersion": "16.10",
-            "monoVersion": "6.12.0.206",
+            "monoVersion": "N/A",
             "dotnetVersion": "N/A"
         },
         "assets": {
@@ -82,10 +82,6 @@
                 ]
             },
             "ironsource": {
-                "applicationGenre": "",
-                "versionName": "",
-                "apiType": 0,
-                "playableMode": 0,
                 "packageType": 0
             },
             "facebook": {
@@ -95,10 +91,7 @@
             }
         },
         "preloader": {
-            "active": true,
-            "icon": "",
-            "logo": "",
-            "backgroundHexColor": "#FFFFFF"
+            "logo": ""
         },
         "enableRealtimeShadows": false,
         "enableLunaCompilerV2": true,
