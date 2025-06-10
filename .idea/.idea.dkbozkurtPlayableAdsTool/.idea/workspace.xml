@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dkbozkurtPlayableAdsTool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Utilities/PlyAdsKitUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Utilities/PlyAdsKitUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/EndCardController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/EndCardController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/TutorialController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/TutorialController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Editor/UnityPackages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Editor/UnityPackages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/PlaygroundConnections/EndCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/PlaygroundConnections/EndCardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Hand_cartoon (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Hand_cartoon (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Mickey Hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Mickey Hand.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/woman-hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/woman-hand.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/UnityPackages/UnityTranslationTool_v3_0.unitypackage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/UnityPackages/UnityTranslationTool_v3_0.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,37 +64,37 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2JSpQTrWoYXxvYY68iPfy0aWf6T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/dogukanjd/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/dogukanjd/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/dogukanjd/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/dogukanjd/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/dogukanjd/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/dogukanjd/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2020.3.47f1/Unity.app/Contents/MacOS/Unity" />
@@ -137,6 +161,7 @@
       <workItem from="1679647474187" duration="653000" />
       <workItem from="1705585905659" duration="212000" />
       <workItem from="1713786684695" duration="1421000" />
+      <workItem from="1749551704565" duration="85000" />
     </task>
     <servers />
   </component>

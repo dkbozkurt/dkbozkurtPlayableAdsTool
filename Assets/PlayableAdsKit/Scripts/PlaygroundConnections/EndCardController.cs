@@ -2,6 +2,7 @@
 using DG.Tweening;
 using PlayableAdsKit.Scripts.Helpers;
 using PlayableAdsKit.Scripts.Utilities;
+using TMPro;
 using UnityEngine;
 
 namespace PlayableAdsKit.Scripts.PlaygroundConnections
@@ -29,6 +30,8 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
         [SerializeField] private RectTransform _shineEffect;
         [SerializeField] private RectTransform _base;
         [SerializeField] private RectTransform _claimButton;
+        [SerializeField] private TextMeshProUGUI _endCardBodyText;
+
         
         private int _tapCounter;
         private float _timer = 0f;
@@ -93,6 +96,7 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
             
             Luna.Unity.LifeCycle.GameEnded();
             AnimateEndCardCall();
+            SetEndCarBaseTextsNewLines();
 
             if (_openStoreAfterEndCard)
             {
@@ -149,6 +153,11 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
             _shineEffect.DOLocalRotate(Vector3.forward * 360f, 5f,RotateMode.FastBeyond360)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
+        }
+        
+        private void SetEndCarBaseTextsNewLines()
+        {
+            _endCardBodyText.text = _endCardBodyText.text.Replace("\\n", "\n");
         }
     }
 }

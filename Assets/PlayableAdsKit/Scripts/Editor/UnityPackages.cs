@@ -17,10 +17,7 @@ namespace PlayableAdsKit.Scripts.Editor
         
         private readonly string _epicToonFXPackagePath =
             "Assets/PlayableAdsKit/UnityPackages/EpicToonFX.unitypackage";
-        
-        private readonly string _meshBakerFXPackagePath =
-            "Assets/PlayableAdsKit/UnityPackages/MeshBaker.unitypackage";
-        
+                
         private readonly string _toonyColorsFreePackagePath =
             "Assets/PlayableAdsKit/UnityPackages/ToonyColorsFree.unitypackage";
         
@@ -45,7 +42,6 @@ namespace PlayableAdsKit.Scripts.Editor
             PackageGroup("JustDice GEO",_justdiceGEOPackagePath);
             PackageGroup("Animation Baker",_animationBakerPackagePath);
             PackageGroup("Epic Toon FX",_epicToonFXPackagePath);
-            PackageGroup("Mesh Baker",_meshBakerFXPackagePath);
             PackageGroup("Toony Colors Free",_toonyColorsFreePackagePath);
             PackageGroup("URP Simple Toon Shader",_urp_simpleToonShaderPackagePath);
         }
