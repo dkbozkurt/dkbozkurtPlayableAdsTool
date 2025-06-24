@@ -5,32 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfe5c071-b9e0-406d-aaa4-3aaae6326fa6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/EndCardController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/EndCardController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/TutorialController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Prefabs/TutorialController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Editor/UnityPackages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/Editor/UnityPackages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/PlaygroundConnections/EndCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayableAdsKit/Scripts/PlaygroundConnections/EndCardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_12.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_13.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Comp 1_14.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Hand_cartoon (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Animated Hand Sprites/Hand_cartoon (1).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Mickey Hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/Mickey Hand.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand-02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/hand.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/woman-hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Textures/Hand Sprites/woman-hand.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/UnityPackages/UnityTranslationTool_v3_0.unitypackage" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/UnityPackages/UnityTranslationTool_v3_0.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Animations/TutorialHand/Sweve.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayableAdsKit/Animations/TutorialHand/Sweve.anim.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +138,7 @@
       <workItem from="1705585905659" duration="212000" />
       <workItem from="1713786684695" duration="1421000" />
       <workItem from="1749551704565" duration="85000" />
+      <workItem from="1750767192144" duration="2000" />
     </task>
     <servers />
   </component>

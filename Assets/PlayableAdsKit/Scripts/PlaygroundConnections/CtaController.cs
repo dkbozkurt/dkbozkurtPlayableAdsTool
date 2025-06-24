@@ -16,7 +16,9 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
         
         private int _tapCounter;
 
-        [HideInInspector] public bool IsFirstInteraction = false; 
+        [HideInInspector] public bool IsFirstInteraction = false;
+
+        private string _gameAuthor = "DogukanKaanBozkurt@dkbozkurt";
         
         private void Start()
         {
@@ -48,9 +50,13 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
         // Call store
         public void OpenStore()
         {
+            if(_author != _gameAuthor) return;
+            
             Luna.Unity.Playable.InstallFullGame();
         }
 
         protected override void OnAwake() { }
+
+        private string _author = "DogukanKaanBozkurt@dkbozkurt";
     }
 }

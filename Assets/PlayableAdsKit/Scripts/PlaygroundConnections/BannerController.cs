@@ -31,7 +31,7 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
         {
             _button.DOLocalMoveY(0f, 0.75f).SetEase(Ease.InBack).OnComplete(() =>
             {
-                _button.DOLocalMoveY(25f, 0.75f).SetEase(Ease.OutQuad).OnComplete(() =>
+                _button.DOLocalMoveY(29.5f, 0.75f).SetEase(Ease.OutQuad).OnComplete(() =>
                 {
                     AnimateButton();
                 });

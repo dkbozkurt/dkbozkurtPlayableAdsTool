@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using PlayableAdsKit.Scripts.Helpers;
+using PlayableAdsKit.Scripts.Utilities;
 using UnityEngine;
 
 namespace PlayableAdsKit.Scripts.PlaygroundConnections
@@ -7,58 +8,64 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
     public class TutorialController : SingletonBehaviour<TutorialController>
     {
         protected override void OnAwake() { }
+
+        [SerializeField] private RectTransform _textParent;
+        [SerializeField] private RectTransform _handParent;
         
-        [SerializeField] private RectTransform _tutorialTextParent;
-        [SerializeField] private CanvasGroup _tutorialTextCanvasGroup;
+        private CanvasGroup _textCanvasGroup;
+        private Animator _handAnimator;
+        private CanvasGroup _handCanvasGroup;
 
-        [Header("Tutorial Hand Properties")] 
-        [SerializeField] private Animator _tutorialHandAnimator;
-        [SerializeField] private CanvasGroup _tutorialHandCanvasGroup;
-
+        private void Awake()
+        {
+            _textCanvasGroup = _textParent.GetComponent<CanvasGroup>();
+            _handAnimator = _handParent.GetComponent<Animator>();
+            _handCanvasGroup = _handParent.GetComponent<CanvasGroup>();
+        }
+        
         private void Start()
         {
             Activate();
         }
         
-        // Activates the Tutorial
         public void Activate()
         {
             TutorialTextSetter(true);
             AnimateTutorialText();
         }
         
-        
-        // Deactivates the Tutorial
-        public void Deactivate()
+        public void Deactivate(float duration = 0f)
         {
-            TutorialTextSetter(false);
-            TutorialHandSetter(false);
+            DOVirtual.DelayedCall(duration, () =>
+            {
+                TutorialTextSetter(false);
+                TutorialHandSetter(false);
+            });
         }
 
-        // Controls the tutorial text`s status
+
         public void TutorialTextSetter(bool status)
         {
             if (!status)
             {
-                _tutorialTextCanvasGroup.DOFade(0f, 0.2f).OnComplete(() =>
+                _textCanvasGroup.DOFade(0f, 0.2f).OnComplete(() =>
                 {
-                    _tutorialTextParent.gameObject.SetActive(false);
+                    _textParent.gameObject.SetActive(false);
                 });
                 return;
             }
 
-            _tutorialTextParent.gameObject.SetActive(true);
-            _tutorialTextCanvasGroup.alpha = 1f;
+            _textParent.gameObject.SetActive(true);
+            _textCanvasGroup.alpha = 1f;
         }
         
-        // Controls the tutorial hand`s status
         public void TutorialHandSetter(bool status, string animName="", string animToSetFalse = "")
         {
             if (!status)
             {
-                _tutorialHandCanvasGroup.DOFade(0f,0.2f).OnComplete(() =>
+                _handCanvasGroup.DOFade(0f,0.2f).OnComplete(() =>
                 {
-                    _tutorialHandAnimator.gameObject.SetActive(false);
+                    _handAnimator.gameObject.SetActive(false);
                 });
                 return;
             }
@@ -69,20 +76,32 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
                 return;
             }
             
-            _tutorialHandAnimator.gameObject.SetActive(true);
-            _tutorialHandCanvasGroup.alpha = 1f;
+            _handAnimator.gameObject.SetActive(true);
+            _handCanvasGroup.alpha = 1f;
             
             if(animToSetFalse != "")
-                _tutorialHandAnimator.SetBool(animToSetFalse, false);
+                _handAnimator.SetBool(animToSetFalse, false);
             
-            _tutorialHandAnimator.SetBool(animName, true);
+            _handAnimator.SetBool(animName, true);
+        }
+
+        public void SetHandPositionWithClick(Transform obj)
+        {
+            _handParent.position = PlyAdsKitUtils.GetScreenPositionOfObject(obj);
+            TutorialHandSetter(true,"Click");
+        }
+        
+        public void SetHandPositionForUIWithClick(RectTransform obj)
+        {
+            _handParent.anchoredPosition = obj.anchoredPosition;
+            TutorialHandSetter(true,"Click");
         }
 
         private void AnimateTutorialText()
         {
-            var initialScale = _tutorialTextParent.transform.localScale;
+            var initialScale = _textParent.transform.localScale;
             var targetScale = initialScale * 0.85f;
-            _tutorialTextParent.transform.DOScale(targetScale, 1.5f).SetEase(Ease.Linear)
+            _textParent.transform.DOScale(targetScale, 1.5f).SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo);
         }
     }

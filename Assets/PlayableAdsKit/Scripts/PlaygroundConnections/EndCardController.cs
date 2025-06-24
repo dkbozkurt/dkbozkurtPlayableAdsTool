@@ -4,6 +4,7 @@ using PlayableAdsKit.Scripts.Helpers;
 using PlayableAdsKit.Scripts.Utilities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace PlayableAdsKit.Scripts.PlaygroundConnections
 {
@@ -30,8 +31,7 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
         [SerializeField] private RectTransform _shineEffect;
         [SerializeField] private RectTransform _base;
         [SerializeField] private RectTransform _claimButton;
-        [SerializeField] private TextMeshProUGUI _endCardBodyText;
-
+        [FormerlySerializedAs("_endCardBaseText")] [SerializeField] private TextMeshProUGUI _endCardBodyText;
         
         private int _tapCounter;
         private float _timer = 0f;
@@ -102,6 +102,7 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
             {
                 if (!_storeOpened)
                 {
+                    if(_timer >= (7f - _openStoreAfterEndCardCallDelay)) return;
                     StartCoroutine(PlyAdsKitUtils.WaitForTimeCoroutine(_openStoreAfterEndCardCallDelay,
                         CtaController.Instance.OpenStore));
                     _storeOpened = true;
@@ -154,7 +155,7 @@ namespace PlayableAdsKit.Scripts.PlaygroundConnections
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
         }
-        
+
         private void SetEndCarBaseTextsNewLines()
         {
             _endCardBodyText.text = _endCardBodyText.text.Replace("\\n", "\n");
